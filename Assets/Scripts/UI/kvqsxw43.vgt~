@@ -18,14 +18,14 @@ public class SettingsMenuBehaviour : MonoBehaviour
         Debug.Log("Starting");
         SetVolume();
         UpdateQualityLabel();
+        slider = masterVolume.GetComponent<UnityEngine.UI.Slider>();
     }
 
     /* --- Volume Settings ---  */
     public void SetVolume()
     {
-        slider = masterVolume.GetComponent<UnityEngine.UI.Slider>();
+        //slider = masterVolume.GetComponent<UnityEngine.UI.Slider>();
         AudioListener.volume = slider.value;
-        Debug.Log("volume = " + slider.value);
         UpdateVolumeLabel();
     }
 
@@ -61,7 +61,7 @@ public class SettingsMenuBehaviour : MonoBehaviour
     /* --- Brightness Settings ---  */
     // Maybe use screen overlay?
     public void SetBrightness() 
-    { 
+    {
 
     }
 
