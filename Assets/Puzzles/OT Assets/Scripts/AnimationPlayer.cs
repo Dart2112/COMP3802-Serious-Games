@@ -1,114 +1,171 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class AnimationPlayer : MonoBehaviour
+namespace Puzzles.OT_Assets.Scripts
 {
-    public Animator footAnimator;
-    [Range(0, 1)] public float footProgress = 0.0f;
-    [Range(0, 1)] public float footTarget = 0.0f;
-
-    public Animator shoeHornAnimator;
-    [Range(0, 1)] public float shoeHornProgress = 0.0f;
-    [Range(0, 1)] public float shoeHornTarget = 0.0f;
-
-    void Start()
+    public class AnimationPlayer : MonoBehaviour
     {
-        footAnimator.speed = 0;
-        shoeHornAnimator.speed = 0;
-    }
+        public float animationSpeed;
+        public Animator grabberAnimator;
+        public Animator tongueAnimator;
+        public Animator shoeHornAnimator;
+        public Animator footAnimator;
 
-    /*
-     * Shoehorn 30
-     * shoe 30
-     * shoehorn 60
-     * shoehorn 90
-     * shoehorn 120
-     * shoe 60 (END)
-     * shoehorn 150 (END)
-     */
-    private AnimationProgress[] arr = new AnimationProgress[]
-    {
-        new AnimationProgress(0, 0),
-        new AnimationProgress(0, 30),
-        new AnimationProgress(30, 30),
-        new AnimationProgress(30, 60),
-        new AnimationProgress(30, 90),
-        new AnimationProgress(30, 120),
-        new AnimationProgress(60, 120),
-        new AnimationProgress(60, 150),
-    };
+        private AnimatedObject[] _objects;
 
-    private int index = 0;
-    private float t = 0.0f;
-    float footFrames = 0;
-    float shoeHornFrames = 0;
-
-    void FixedUpdate()
-    {
-        bool animate = false;
-        //Detect if the animation needs to play
-        if (Input.GetKeyDown(KeyCode.Space))
+        private void Start()
         {
-            index += 1;
-            animate = true;
+            _objects = new[]
+            {
+                new AnimatedObject(grabberAnimator, 0, 90),
+                new AnimatedObject(tongueAnimator, 0, 30),
+                new AnimatedObject(shoeHornAnimator, 0, 60),
+                new AnimatedObject(footAnimator, 0, 60)
+            };
         }
-        else if (Input.GetKeyDown(KeyCode.Backspace))
+    
+        private readonly AnimationProgress[] _arr = {
+            new AnimationProgress(0, 0, 0, 0),
+            new AnimationProgress(30, 0, 0, 0),
+            new AnimationProgress(60, 30, 0, 0),
+            new AnimationProgress(60, 30, 0, 30),
+            new AnimationProgress(90, 30, 30, 30),
+            new AnimationProgress(90, 0, 30, 60),
+            new AnimationProgress(90, 0, 60, 60)
+        };
+
+
+        private int _index;
+        private float _t;
+
+        void FixedUpdate()
         {
-            index -= 1;
-            animate = true;
+            bool animate = false;
+            //Detect if the animation needs to play
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (_arr.Length > (_index + 1))
+                {
+                    _index += 1;
+                    animate = true;
+                }
+                else
+                {
+                    Debug.Log("Reached End of Animations");
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                if (_index != 0)
+                {
+                    _index -= 1;
+                    animate = true;
+                }
+                else
+                {
+                    Debug.Log("Reached Start of Animations");
+                }
+            }
+
+            if (animate)
+            {
+                int[] progress = _arr[_index].ToArray();
+
+                //Loop over each and set frames to the number from progress
+                for (int i = 0; i < 4; i++)
+                {
+                    int frames = progress[i];
+                    AnimatedObject obj = _objects[i];
+                    obj.Frames = frames;
+                }
+
+                _t = 0.0f;
+            }
+
+            //Map frames to animation progress and check if anything is animating
+            bool isAnimating = false;
+            foreach (AnimatedObject animatedObject in _objects)
+            {
+                animatedObject.MapFrames();
+                if (animatedObject.IsAnimating())
+                    isAnimating = true;
+            }
+
+            //Lerp to the correct animation point
+            if (isAnimating)
+            {
+                _t += 1.0f / (30.0f * animationSpeed);
+            }
+            else
+            {
+                _t = 0.0f;
+            }
+
+            foreach (AnimatedObject animatedObject in _objects)
+            {
+                animatedObject.ProgressAnimations(_t);
+            }
         }
 
-        if (animate)
+        public class AnimatedObject
         {
-            AnimationProgress progress = arr[index];
-            footFrames = progress.shoe;
-            shoeHornFrames = progress.horn;
+            private readonly Animator _ani;
+            private float _target;
+            private float _progress;
+            public int Frames;
+            private readonly int _startFrame, _endFrame;
 
-            t = 0.0f;
+            public AnimatedObject(Animator ani, int startFrame, int endFrame)
+            {
+                _ani = ani;
+                _ani.speed = 0;
+                _target = 0.0f;
+                _progress = 0.0f;
+                Frames = 0;
+                this._startFrame = startFrame;
+                this._endFrame = endFrame;
+            }
 
-            Debug.Log(progress.toString() + "  Foot:" + footFrames + "  Shoehorn:" + shoeHornFrames);
+            public void MapFrames()
+            {
+                _target = Map(Frames, _startFrame, _endFrame);
+            }
+
+            public bool IsAnimating()
+            {
+                return Math.Abs(_target - _progress) > 0.005f;
+            }
+
+            public void ProgressAnimations(float t)
+            {
+                _progress = Mathf.Lerp(_progress, _target, t);
+                _ani.Play("Ani", -1, _progress);
+            }
+
+            private static float Map(float s, float a1, float a2)
+            {
+                return 0 + (s - a1) * (1 - 0) / (a2 - a1);
+            }
         }
 
-        //Map frames to animation progress
-        footTarget = map(footFrames, 0, 60);
-        shoeHornTarget = map(shoeHornFrames, 0, 150);
 
-        //Lerp to the correct animation point
-        if (footProgress != footTarget || shoeHornProgress != shoeHornTarget)
+        private class AnimationProgress
         {
-            t += 1.0f / 120.0f;
-        }
-        else
-        {
-            t = 0.0f;
-        }
+            private readonly int _grabber, _tongue, _horn, _foot;
 
-        footProgress = Mathf.Lerp(footProgress, footTarget, t);
-        footAnimator.Play("Ani", -1, footProgress);
-        shoeHornProgress = Mathf.Lerp(shoeHornProgress, shoeHornTarget, t);
-        shoeHornAnimator.Play("Ani", -1, shoeHornProgress);
-    }
+            public AnimationProgress(int grabber, int tongue, int horn, int foot)
+            {
+                this._foot = foot;
+                this._horn = horn;
+                this._grabber = grabber;
+                this._tongue = tongue;
+            }
 
-    float map(float s, float a1, float a2)
-    {
-        return 0 + (s - a1) * (1 - 0) / (a2 - a1);
-    }
 
-    protected class AnimationProgress
-    {
-        public AnimationProgress(float shoe, float horn)
-        {
-            this.shoe = shoe;
-            this.horn = horn;
-        }
-
-        public float shoe;
-        public float horn;
-
-        public String toString()
-        {
-            return shoe + "-" + horn;
+            public int[] ToArray()
+            {
+                return new[] { _grabber, _tongue, _horn, _foot };
+            }
         }
     }
 }
