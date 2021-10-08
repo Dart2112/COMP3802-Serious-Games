@@ -23,8 +23,10 @@ namespace Puzzles.OT_Assets.Scripts
                 new AnimatedObject(footAnimator, 0, 60)
             };
         }
-    
-        private readonly AnimationProgress[] _arr = {
+
+        //TODO: Add more steps in between to make the game last longer
+        private readonly AnimationProgress[] _arr =
+        {
             new AnimationProgress(0, 0, 0, 0),
             new AnimationProgress(30, 0, 0, 0),
             new AnimationProgress(60, 30, 0, 0),
@@ -38,50 +40,64 @@ namespace Puzzles.OT_Assets.Scripts
         private int _index;
         private float _t;
 
-        void FixedUpdate()
+        public void AnimateFoward()
         {
-            bool animate = false;
+            if (_arr.Length > (_index + 1))
+            {
+                _index += 1;
+                Animate();
+            }
+            else
+            {
+                Debug.Log("Reached End of Animations");
+            }
+        }
+
+        public void AnimateBackward()
+        {
+            if (_index != 0)
+            {
+                _index -= 1;
+                Animate();
+            }
+            else
+            {
+                Debug.Log("Reached Start of Animations");
+            }
+        }
+
+        private void Animate()
+        {
+            //Get the animation states that should be set as targets
+            int[] progress = _arr[_index].ToArray();
+            
+            //Loop over each and set frames to the number from progress
+            for (int i = 0; i < 4; i++)
+            {
+                int frames = progress[i];
+                AnimatedObject obj = _objects[i];
+                obj.Frames = frames;
+            }
+
+            _t = 0.0f;
+        }
+
+        //TODO: This will be removed once the mini game controls the animations
+        private void Update()
+        {
             //Detect if the animation needs to play
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (_arr.Length > (_index + 1))
-                {
-                    _index += 1;
-                    animate = true;
-                }
-                else
-                {
-                    Debug.Log("Reached End of Animations");
-                }
+                AnimateFoward();
             }
             else if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                if (_index != 0)
-                {
-                    _index -= 1;
-                    animate = true;
-                }
-                else
-                {
-                    Debug.Log("Reached Start of Animations");
-                }
+                AnimateBackward();
             }
+        }
 
-            if (animate)
-            {
-                int[] progress = _arr[_index].ToArray();
-
-                //Loop over each and set frames to the number from progress
-                for (int i = 0; i < 4; i++)
-                {
-                    int frames = progress[i];
-                    AnimatedObject obj = _objects[i];
-                    obj.Frames = frames;
-                }
-
-                _t = 0.0f;
-            }
-
+        void FixedUpdate()
+        {
             //Map frames to animation progress and check if anything is animating
             bool isAnimating = false;
             foreach (AnimatedObject animatedObject in _objects)
@@ -91,7 +107,7 @@ namespace Puzzles.OT_Assets.Scripts
                     isAnimating = true;
             }
 
-            //Lerp to the correct animation point
+            //Increment time value based on animation speed
             if (isAnimating)
             {
                 _t += 1.0f / (30.0f * animationSpeed);
@@ -101,13 +117,14 @@ namespace Puzzles.OT_Assets.Scripts
                 _t = 0.0f;
             }
 
+            //Lerp the animations towards their targets
             foreach (AnimatedObject animatedObject in _objects)
             {
                 animatedObject.ProgressAnimations(_t);
             }
         }
 
-        public class AnimatedObject
+        private class AnimatedObject
         {
             private readonly Animator _ani;
             private float _target;
