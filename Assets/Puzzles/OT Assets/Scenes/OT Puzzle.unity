@@ -254,7 +254,9 @@ MonoBehaviour:
   greenBar: {fileID: 661207649}
   box: {fileID: 1556798958}
   speed: 0.05
-  speedRamp: 0.03
+  speedRamp: 0.01
+  HitPrefab: {fileID: 4754882323761907092, guid: f425fc19fc3fba54db8a9e86d255cd7e, type: 3}
+  MissPrefab: {fileID: 1716242686585180880, guid: 86addb83924039a418531d544b9ca7fb, type: 3}
 --- !u!1 &646769701
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87acfbedf22e086428c132a65f262dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 30
+  animationSpeed: 15
   grabberAnimator: {fileID: 688580517}
   tongueAnimator: {fileID: 1834661384}
   shoeHornAnimator: {fileID: 1423813491}

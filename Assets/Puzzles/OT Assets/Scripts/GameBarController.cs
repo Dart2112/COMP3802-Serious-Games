@@ -8,6 +8,10 @@ namespace Puzzles.OT_Assets.Scripts
         public GameObject greenBar, box;
         public float speed = 0.05f;
         public float speedRamp = 0.03f;
+
+        public GameObject HitPrefab;
+        public GameObject MissPrefab;
+        
         private int _direction = 1;
 
         void Update()
@@ -25,12 +29,14 @@ namespace Puzzles.OT_Assets.Scripts
                     animations.AnimateFoward();
                     MoveGreenBox();
                     speed += speedRamp;
+                    Instantiate(HitPrefab);
                 }
                 else
                 {
                     Debug.Log("MISS!");
                     animations.AnimateBackward();
                     speed += -speedRamp;
+                    Instantiate(MissPrefab);
                 }
             }
             //Clamp the speed

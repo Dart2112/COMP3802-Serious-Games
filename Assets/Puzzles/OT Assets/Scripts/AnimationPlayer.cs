@@ -28,9 +28,11 @@ namespace Puzzles.OT_Assets.Scripts
         private readonly AnimationProgress[] _arr =
         {
             new AnimationProgress(0, 0, 0, 0),
+            new AnimationProgress(15, 0, 0, 0),
             new AnimationProgress(30, 0, 0, 0),
             new AnimationProgress(60, 30, 0, 0),
             new AnimationProgress(60, 30, 0, 30),
+            new AnimationProgress(90, 30, 0, 30),
             new AnimationProgress(90, 30, 30, 30),
             new AnimationProgress(90, 0, 30, 60),
             new AnimationProgress(90, 0, 60, 60)
