@@ -82,20 +82,6 @@ namespace Puzzles.OT_Assets.Scripts
             _t = 0.0f;
         }
 
-        //TODO: This will be removed once the mini game controls the animations
-        private void Update()
-        {
-            //Detect if the animation needs to play
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                AnimateFoward();
-            }
-            else if (Input.GetKeyDown(KeyCode.Backspace))
-            {
-                AnimateBackward();
-            }
-        }
-
         void FixedUpdate()
         {
             //Map frames to animation progress and check if anything is animating
