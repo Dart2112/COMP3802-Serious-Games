@@ -5,7 +5,7 @@ namespace Puzzles.OT_Assets.Scripts
 {
     public class AnimationPlayer : MonoBehaviour
     {
-        public float animationSpeed;
+        public float animationSpeed = 15f;
         public Animator grabberAnimator;
         public Animator tongueAnimator;
         public Animator shoeHornAnimator;
@@ -15,6 +15,8 @@ namespace Puzzles.OT_Assets.Scripts
 
         private void Start()
         {
+            //Store the objects in an array to be accessed in Animate()
+            //These need to be in the same order as they are in the animation progress array so that indices line up
             _objects = new[]
             {
                 new AnimatedObject(grabberAnimator, 0, 90),
@@ -24,7 +26,7 @@ namespace Puzzles.OT_Assets.Scripts
             };
         }
 
-        //TODO: Add more steps in between to make the game last longer
+        //Each of these is one of the states that the animations will take in the progress of the game
         private readonly AnimationProgress[] _arr =
         {
             new AnimationProgress(0, 0, 0, 0),
@@ -39,10 +41,13 @@ namespace Puzzles.OT_Assets.Scripts
         };
 
 
+        //This is which animation progress item we are currently animating towards
         private int _index;
+
+        //This value is used to drive the animations towards their target positions
         private float _t;
 
-        public void AnimateFoward()
+        public void AnimateForward()
         {
             if (_arr.Length > (_index + 1))
             {
@@ -52,6 +57,8 @@ namespace Puzzles.OT_Assets.Scripts
             else
             {
                 Debug.Log("Reached End of Animations");
+                //Trigger the end of game state
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBarBehaviour>().EndGame();
             }
         }
 
@@ -72,8 +79,9 @@ namespace Puzzles.OT_Assets.Scripts
         {
             //Get the animation states that should be set as targets
             int[] progress = _arr[_index].ToArray();
-            
+
             //Loop over each and set frames to the number from progress
+            //This is basically setting where each animation should go to so that it can be animated in fixed update
             for (int i = 0; i < 4; i++)
             {
                 int frames = progress[i];
@@ -81,6 +89,7 @@ namespace Puzzles.OT_Assets.Scripts
                 obj.Frames = frames;
             }
 
+            //Reset the time to 0 so that the animations start playing again from their current state towards the target
             _t = 0.0f;
         }
 
@@ -123,47 +132,56 @@ namespace Puzzles.OT_Assets.Scripts
             public AnimatedObject(Animator ani, int startFrame, int endFrame)
             {
                 _ani = ani;
+                //Setting the speed to 0 stops the animations from automatically playing
+                //This is necessary as we control their playback at a custom speed by manually setting their progress
                 _ani.speed = 0;
+                //Make sure all progress is set to 0 so that the animations are playing from the start
                 _target = 0.0f;
                 _progress = 0.0f;
                 Frames = 0;
-                this._startFrame = startFrame;
-                this._endFrame = endFrame;
+                _startFrame = startFrame;
+                _endFrame = endFrame;
             }
 
             public void MapFrames()
             {
+                //Sets the target to a value from 0-1 given a frame in the animation
                 _target = Map(Frames, _startFrame, _endFrame);
             }
 
             public bool IsAnimating()
             {
+                //Dealing with floating point precision,
+                //check if target is equal to progress as this means the animation is currently complete
                 return Math.Abs(_target - _progress) > 0.005f;
             }
 
             public void ProgressAnimations(float t)
             {
+                //Move towards the target with value t as our lerp value
                 _progress = Mathf.Lerp(_progress, _target, t);
+                //Apply this progression to the animator
                 _ani.Play("Ani", -1, _progress);
             }
 
-            private static float Map(float s, float a1, float a2)
+            private static float Map(float targetFrame, float startFrame, float endFrame)
             {
-                return 0 + (s - a1) * (1 - 0) / (a2 - a1);
+                return 0 + (targetFrame - startFrame) * (1 - 0) / (endFrame - startFrame);
             }
         }
 
 
         private class AnimationProgress
         {
+            //This class is used as an array to store the progress of each animated object
             private readonly int _grabber, _tongue, _horn, _foot;
 
             public AnimationProgress(int grabber, int tongue, int horn, int foot)
             {
-                this._foot = foot;
-                this._horn = horn;
-                this._grabber = grabber;
-                this._tongue = tongue;
+                _foot = foot;
+                _horn = horn;
+                _grabber = grabber;
+                _tongue = tongue;
             }
 
 
