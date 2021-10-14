@@ -12,27 +12,24 @@ namespace Puzzles.OT_Assets.Scripts
         public float speed = 1f;
         public float maxDrift = 1f;
         private float _drift;
-        private TextMeshPro _text;
+        private SpriteRenderer _sprite;
 
         private void Start()
         {
             _drift = Random.Range(-maxDrift, maxDrift);
-            //TODO: remove once these are sprite based
-            _text = GetComponent<TextMeshPro>();
-            _text.color = _text.text == "YES" ? Color.green : Color.red;
+            _sprite = GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            //TODO: Change the alpha code to handle sprites once we have them
             //Fade the alpha, this makes the prefab fade as it rises
-            Color oldColor = _text.color;
+            Color oldColor = _sprite.color;
             float alpha = oldColor.a;
             Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, alpha - (fadeSpeed * Time.deltaTime));
-            _text.color = newColor;
+            _sprite.color = newColor;
             //Once its not visible we destroy it, this clears it from the scene so they don't stack up
-            if (_text.color.a <= 0)
+            if (_sprite.color.a <= 0)
             {
                 Destroy(gameObject);
             }

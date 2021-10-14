@@ -255,8 +255,8 @@ MonoBehaviour:
   box: {fileID: 1556798958}
   speed: 0.05
   speedRamp: 0.01
-  hitPrefab: {fileID: 4754882323761907092, guid: f425fc19fc3fba54db8a9e86d255cd7e, type: 3}
-  missPrefab: {fileID: 1716242686585180880, guid: 86addb83924039a418531d544b9ca7fb, type: 3}
+  hitPrefab: {fileID: 5481641555438416581, guid: f425fc19fc3fba54db8a9e86d255cd7e, type: 3}
+  missPrefab: {fileID: 1187562646712988126, guid: 86addb83924039a418531d544b9ca7fb, type: 3}
   startPanel: {fileID: 608600298}
   endPanel: {fileID: 1032933621}
 --- !u!1 &608600298
@@ -755,7 +755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688580516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.47, y: 3.2, z: 0}
+  m_LocalPosition: {x: -1.23, y: 2.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1173266245}

@@ -47,6 +47,8 @@ namespace Puzzles.OT_Assets.Scripts
                     _gameState = GameState.Playing;
                     //Hide the startPanel
                     startPanel.SetActive(false);
+                    //Move the box to a random spot to start
+                    MoveGreenBox();
                 }
                 else if (_gameState == GameState.Playing)
                 {
