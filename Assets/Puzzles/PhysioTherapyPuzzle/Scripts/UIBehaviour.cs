@@ -51,6 +51,9 @@ public class UIBehaviour : MonoBehaviour
     [Tooltip("End Timer GameObject UI")]
     public GameObject endCountDown;
 
+    [Tooltip("End Timer UI circle")]
+    public GameObject countDownCircle;
+
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +87,8 @@ public class UIBehaviour : MonoBehaviour
         {
             Time.timeScale = 0;
             direction = 0;
+            endCountDown.SetActive(false);
+            countDownCircle.SetActive(false);
             endMenu.SetActive(true);
         }
     }
@@ -151,11 +156,13 @@ public class UIBehaviour : MonoBehaviour
         {
             // set the screen as active
             endCountDown.SetActive(true);
+            countDownCircle.SetActive(true);
             endCountDown.GetComponent<Text>().text = ((int)endTime).ToString(); // Converting to string and rounding
         }
         else
         {
             endCountDown.SetActive(false);
+            countDownCircle.SetActive(false);
             ending = false;
         }
 
