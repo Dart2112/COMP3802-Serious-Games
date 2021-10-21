@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &608600299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1792,9 +1792,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Occupational Therapy\r\n\r\nTo complete this puzzle, you must press the
-    space key when the green section is visible through the white box\r\n\r\nSomething
-    about needing to put shoes on to be independent and that\r\n\r\nPress [SPACE]
-    to start\r"
+    space key when the green section is visible through the white box\r\n\r\nWhen
+    Gerald goes home it is going to be important that he can take care of himself.
+    Because of his total hip replacement, we need to be careful with his hip and
+    leg movements. So, putting on his shoes and socks is going to be a bit tricky!
+    As an occupational therapist, we will work with Gerald so he can learn how to
+    put his shoes and socks on independently using equipment to help him with this
+    task.\n\r\nPress [SPACE] to start\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1821,8 +1825,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
