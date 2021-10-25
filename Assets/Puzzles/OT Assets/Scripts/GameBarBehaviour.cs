@@ -39,6 +39,8 @@ namespace Puzzles.OT_Assets.Scripts
 
         void Update()
         {
+        //TODO: Detect end of play and move back to previous scene
+        //TODO: Submit scores
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (_gameState == GameState.Start)

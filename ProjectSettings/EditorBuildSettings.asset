@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/GameManager/_Scenes/GameManager.unity
+    guid: 419318c89d4363b4bb55e8bae279b691
+  - enabled: 1
     path: Assets/MainMenus/Scenes/MainMenus.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Puzzles/OT Assets/Scenes/OT Puzzle.unity
+    path: Assets/Puzzles/OT Assets/_Scenes/OT Puzzle.unity
     guid: aa697783ee23f374bbc6d329a779372d
   m_configObjects: {}
