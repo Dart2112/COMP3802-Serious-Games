@@ -54,6 +54,11 @@ public class UIBehaviour : MonoBehaviour
     [Tooltip("End Timer UI circle")]
     public GameObject countDownCircle;
 
+    private AudioSource success;
+    private AudioSource fail;
+    private AudioSource totalFailure;
+    private AudioSource complete;
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +77,13 @@ public class UIBehaviour : MonoBehaviour
         // Getting the starting difference between the camera and other objects
         blockCamDifference = startPos.position.y - camPos.position.y;
         colliderCamDifference = leftCollider.transform.position.y - camPos.position.y;
+
+        // Getting Effect Sounds
+        success = GameObject.Find("Success").GetComponent<AudioSource>();
+        fail = GameObject.Find("Fail").GetComponent<AudioSource>();
+        complete = GameObject.Find("Complete").GetComponent<AudioSource>();
+        complete = GameObject.Find("Complete").GetComponent<AudioSource>();
+        totalFailure = GameObject.Find("TotalFailure").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -90,6 +102,7 @@ public class UIBehaviour : MonoBehaviour
             endCountDown.SetActive(false);
             countDownCircle.SetActive(false);
             endMenu.SetActive(true);
+            complete.Play();
         }
     }
 
@@ -103,6 +116,7 @@ public class UIBehaviour : MonoBehaviour
     {
         blockCounter += 1;
         count.text = blockCounter + " / " + goal;
+        success.Play();
         if (blockCounter == goal && !ending)
         {
             // Wait 4 seconds before ending
@@ -129,6 +143,7 @@ public class UIBehaviour : MonoBehaviour
             wait = true;
             currentTime = 2;
             failCounter += 1;
+            
             Debug.Log("Updating Fail");
         }
 
@@ -139,7 +154,8 @@ public class UIBehaviour : MonoBehaviour
             Time.timeScale = 0;
             direction = 0;
             failMenu.SetActive(true);
-        }
+            totalFailure.Play();
+        } else fail.Play();
     }
 
     // Refreshing block counter by finding all gameobjects with tag 'Block'

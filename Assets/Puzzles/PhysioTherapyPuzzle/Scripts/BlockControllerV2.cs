@@ -7,7 +7,7 @@ public class BlockControllerV2 : MonoBehaviour
     private bool playerControl;
     //private float moveInput = 0;
     
-    private float direction = -1;
+   // private float direction = -1;
     private Rigidbody2D rb;
     private GameObject UIBehaviour; // Object Containing the UIBehaviour Script
     private UIBehaviour ui; // UIBehaviour script
