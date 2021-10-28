@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,8 @@ namespace GameManager.Scripts
 {
     public class GameManager : MonoBehaviour
     {
+        //SCENE MANAGEMENT
+
         //The first scene that needs to be loaded for the game
         public string mainSceneName;
 
@@ -106,6 +109,32 @@ namespace GameManager.Scripts
             PlayerPrefs.SetString("GameManager.LoadScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.ActiveScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.UnloadScene", unloadScene);
+        }
+
+        //SCORE MANAGEMENT
+
+        public enum Puzzle
+        {
+            OccupationalTherapy,
+            PhysioTherapy
+        }
+
+        public static void SubmitScore(Puzzle puzzle, int score)
+        {
+            PlayerPrefs.SetInt(puzzle.ToString() + ".score", score);
+        }
+
+        public static int RetrieveAverageScore()
+        {
+            int i = 0;
+            int total = 0;
+            foreach (Puzzle puzzle in Enum.GetValues(typeof(Puzzle)))
+            {
+                i++;
+                total += PlayerPrefs.GetInt(puzzle.ToString() + ".score");
+            }
+
+            return total / i;
         }
     }
 }

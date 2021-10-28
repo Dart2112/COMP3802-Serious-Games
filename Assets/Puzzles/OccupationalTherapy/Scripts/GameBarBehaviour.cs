@@ -141,6 +141,26 @@ namespace Puzzles.OT_Assets.Scripts
             endPanel.SetActive(true);
             endPanel.GetComponent<ScoreDisplayControl>().UpdateScores(_hits, _misses);
             //TODO: Submit scores
+            int score;
+            if (_misses == 0)
+            {
+                score = 3;
+            }
+            else if (_misses <= 2)
+            {
+                score = 2;
+            }
+            else if (_misses <= 5)
+            {
+                score = 1;
+            }
+            else
+            {
+                score = 0;
+            }
+
+            GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.OccupationalTherapy,
+                score);
         }
 
         private void MoveGreenBox()
