@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Block
   - Fire
+  - MainMenus
   layers:
   - Default
   - TransparentFX

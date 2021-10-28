@@ -38,4 +38,9 @@ public class MenuBehaviour : MonoBehaviour
         settings.SetActive(false);
         mainMenu.SetActive(true);
     }
+
+    public void StartOTPuzzle()
+    {
+        GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "");
+    }
 }

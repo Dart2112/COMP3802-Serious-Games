@@ -21,6 +21,7 @@ namespace Puzzles.OT_Assets.Scripts
 
         private int _direction = 1;
 
+
         private enum GameState
         {
             Start,
@@ -32,6 +33,7 @@ namespace Puzzles.OT_Assets.Scripts
 
         private void Start()
         {
+            GameManager.Scripts.GameManager.ToggleItem("MainMenus", false);
             _gameState = GameState.Start;
             startPanel.SetActive(true);
             endPanel.SetActive(false);
@@ -39,8 +41,6 @@ namespace Puzzles.OT_Assets.Scripts
 
         void Update()
         {
-        //TODO: Detect end of play and move back to previous scene
-        //TODO: Submit scores
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (_gameState == GameState.Start)
@@ -85,6 +85,12 @@ namespace Puzzles.OT_Assets.Scripts
                         //Spawn the miss prefab to make it clear to the player that they failed to hit the box
                         Instantiate(missPrefab);
                     }
+                }
+                else if (_gameState == GameState.End)
+                {
+                    //Return to the main menu
+                    GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
+                    GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
                 }
             }
 
@@ -134,6 +140,7 @@ namespace Puzzles.OT_Assets.Scripts
             _gameState = GameState.End;
             endPanel.SetActive(true);
             endPanel.GetComponent<ScoreDisplayControl>().UpdateScores(_hits, _misses);
+            //TODO: Submit scores
         }
 
         private void MoveGreenBox()

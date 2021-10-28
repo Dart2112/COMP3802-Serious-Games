@@ -18,6 +18,9 @@ namespace GameManager.Scripts
         //List of scenes that need to be unloaded (Probably doesnt need to be a list but its just safer to do this)
         private readonly List<string> _unload = new List<string>();
 
+        //Items to be toggled
+        private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
+
         private void Start()
         {
             //Load the main scene and dont unload anything
@@ -34,10 +37,11 @@ namespace GameManager.Scripts
             //Check if there is one to load
             if (_sceneName != "")
             {
+                Debug.Log("Loading " + _sceneName);
+                //Load the scene
+                SceneManager.LoadSceneAsync(_sceneName, LoadSceneMode.Additive);
                 //Clear the variable to only load the scene once
                 PlayerPrefs.SetString("GameManager.LoadScene", "");
-                //Load the scene
-                SceneManager.LoadScene(_sceneName, LoadSceneMode.Additive);
             }
 
             string unloadScene = PlayerPrefs.GetString("GameManager.UnloadScene");
@@ -45,6 +49,7 @@ namespace GameManager.Scripts
             if (unloadScene != "")
             {
                 _unload.Add(unloadScene);
+                Debug.Log("Unloading " + unloadScene);
                 PlayerPrefs.SetString("GameManager.UnloadScene", "");
             }
 
@@ -53,12 +58,13 @@ namespace GameManager.Scripts
             if (activeScene != "")
             {
                 _activeScene = activeScene;
+                Debug.Log("Setting active scene to " + activeScene);
                 PlayerPrefs.SetString("GameManager.ActiveScene", "");
             }
 
             //Check if the correct scene is active
             bool setActive = SceneManager.GetActiveScene().name != _activeScene;
-            
+
             //Loop over all the loaded or loading scenes
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {
@@ -77,6 +83,16 @@ namespace GameManager.Scripts
             }
         }
 
+        public static void ToggleItem(string tag, bool state)
+        {
+            if (!ToggleItems.TryGetValue(tag, out _))
+            {
+                ToggleItems[tag] = GameObject.FindWithTag(tag);
+            }
+
+            ToggleItems[tag].SetActive(state);
+        }
+
         //Use this to unload a mini-game and revert back to another scene
         public static void UnloadScene(string sceneToUnload, string newActiveScene)
         {
@@ -88,6 +104,7 @@ namespace GameManager.Scripts
         public static void LoadNewScene(string sceneToLoad, string unloadScene)
         {
             PlayerPrefs.SetString("GameManager.LoadScene", sceneToLoad);
+            PlayerPrefs.SetString("GameManager.ActiveScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.UnloadScene", unloadScene);
         }
     }
