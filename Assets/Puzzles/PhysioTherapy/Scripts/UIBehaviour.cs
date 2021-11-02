@@ -68,7 +68,7 @@ public class UIBehaviour : MonoBehaviour
         ending = false;
 
         // Getting main camera and its starting position
-        camPos = GameObject.Find("Main Camera").transform;
+        camPos = GameObject.Find("PhysioMainCamera").transform;
         startPos = GameObject.Find("StartPos").transform;
         camStartPos = camPos.position;
         count.text = blockCounter + " / " + goal;

@@ -24,12 +24,15 @@ namespace GameManager.Scripts
         //Items to be toggled
         private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
 
+        public static int _physioTherapyIteration;
+
         private void Start()
         {
             //Load the main scene and dont unload anything
             PlayerPrefs.SetString("GameManager.LoadScene", mainSceneName);
             PlayerPrefs.SetString("GameManager.UnloadScene", "");
             PlayerPrefs.SetString("GameManager.ActiveScene", mainSceneName);
+            _physioTherapyIteration = 0;
         }
 
         // Update is called once per frame
@@ -106,6 +109,7 @@ namespace GameManager.Scripts
         //Use this to load a Scene, Leave unload scene blank if you dont want to unload a scene
         public static void LoadNewScene(string sceneToLoad, string unloadScene)
         {
+            Debug.Log("ScenetoLoad " + sceneToLoad);
             PlayerPrefs.SetString("GameManager.LoadScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.ActiveScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.UnloadScene", unloadScene);
@@ -135,6 +139,12 @@ namespace GameManager.Scripts
             }
 
             return total / i;
+        }
+
+        // Keeps track of the number of restarts for the physio puzzle
+        public static void PhysioIterate() {
+            _physioTherapyIteration++;
+            Debug.Log("Iteration" + _physioTherapyIteration);
         }
     }
 }

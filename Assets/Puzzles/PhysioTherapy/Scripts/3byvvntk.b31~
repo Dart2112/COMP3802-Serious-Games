@@ -11,11 +11,10 @@ public class Restart : MonoBehaviour
 
     public void restart() {
         Debug.Log("Running Restart");
-        GameManager.Scripts.GameManager.PhysioIterate();
+        GameManager.Scripts.GameManager._physioTherapyIteration++;
         // Will need to be modified
         //UnityEngine.SceneManagement.SceneManager.LoadScene("PhysioTherapyPuzzle");
-        //GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
-        GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "PhysioTherapyPuzzle");
+        GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "");
         //endMenu.SetActive(false);
     }
 
