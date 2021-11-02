@@ -9,7 +9,7 @@ namespace Puzzles.OT_Assets.Scripts
         public AnimationPlayer animations;
         public GameObject greenBar, box;
         public float speed = 0.05f;
-        public float speedRamp = 0.03f;
+        public float speedRamp = 0.005f;
 
         //The prefabs to be spawned when the player hits or misses the target
         public GameObject hitPrefab;
@@ -89,8 +89,10 @@ namespace Puzzles.OT_Assets.Scripts
                 else if (_gameState == GameState.End)
                 {
                     //Return to the main menu
-                    GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
-                    GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
+                    //TODO: Revert this to load the main menu
+                    //GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
+                    //GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
+                    GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "OT Puzzle");
                 }
             }
 

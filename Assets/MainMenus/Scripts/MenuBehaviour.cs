@@ -41,7 +41,7 @@ public class MenuBehaviour : MonoBehaviour
 
     public void StartOTPuzzle()
     {
-        GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "");
+        GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "MainMenus");
     }
 
     public void StartPhysioPuzzle() {
