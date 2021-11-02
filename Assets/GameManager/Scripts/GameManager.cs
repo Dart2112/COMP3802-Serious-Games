@@ -18,11 +18,10 @@ namespace GameManager.Scripts
         //The scene that should be active (Might still be loading though)
         private string _activeScene = "";
 
-        //List of scenes that need to be unloaded (Probably doesnt need to be a list but its just safer to do this)
-        private readonly List<string> _unload = new List<string>();
-
         //Items to be toggled
         private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
+
+        private static int _physioTherapyIteration;
 
         private void Start()
         {
@@ -30,11 +29,21 @@ namespace GameManager.Scripts
             PlayerPrefs.SetString("GameManager.LoadScene", mainSceneName);
             PlayerPrefs.SetString("GameManager.UnloadScene", "");
             PlayerPrefs.SetString("GameManager.ActiveScene", mainSceneName);
+            _physioTherapyIteration = 0;
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
+            string unloadScene = PlayerPrefs.GetString("GameManager.UnloadScene");
+            //If we are unloading a scene then we add it to the list here
+            if (unloadScene != "")
+            {
+                SceneManager.UnloadSceneAsync(unloadScene);
+                Debug.Log("Unloading " + unloadScene);
+                PlayerPrefs.SetString("GameManager.UnloadScene", "");
+            }
+
             //Fetch this value to check if a scene needs to be loaded
             _sceneName = PlayerPrefs.GetString("GameManager.LoadScene");
             //Check if there is one to load
@@ -45,15 +54,6 @@ namespace GameManager.Scripts
                 SceneManager.LoadSceneAsync(_sceneName, LoadSceneMode.Additive);
                 //Clear the variable to only load the scene once
                 PlayerPrefs.SetString("GameManager.LoadScene", "");
-            }
-
-            string unloadScene = PlayerPrefs.GetString("GameManager.UnloadScene");
-            //If we are unloading a scene then we add it to the list here
-            if (unloadScene != "")
-            {
-                _unload.Add(unloadScene);
-                Debug.Log("Unloading " + unloadScene);
-                PlayerPrefs.SetString("GameManager.UnloadScene", "");
             }
 
             string activeScene = PlayerPrefs.GetString("GameManager.ActiveScene");
@@ -72,11 +72,6 @@ namespace GameManager.Scripts
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {
                 Scene s = SceneManager.GetSceneAt(i);
-                //Unload this scene if its in the unload list
-                if (_unload.Contains(s.name))
-                {
-                    SceneManager.UnloadSceneAsync(s);
-                }
 
                 //If this is the scene that should be active and its ready then we set it as the active scene
                 if (setActive && s.name == _activeScene && s.isLoaded)
@@ -106,6 +101,7 @@ namespace GameManager.Scripts
         //Use this to load a Scene, Leave unload scene blank if you dont want to unload a scene
         public static void LoadNewScene(string sceneToLoad, string unloadScene)
         {
+            Debug.Log("SceneToLoad " + sceneToLoad);
             PlayerPrefs.SetString("GameManager.LoadScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.ActiveScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.UnloadScene", unloadScene);
@@ -135,6 +131,13 @@ namespace GameManager.Scripts
             }
 
             return total / i;
+        }
+
+        // Keeps track of the number of restarts for the physio puzzle
+        public static void PhysioIterate()
+        {
+            _physioTherapyIteration++;
+            Debug.Log("Iteration" + _physioTherapyIteration);
         }
     }
 }
