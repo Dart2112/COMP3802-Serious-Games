@@ -21,7 +21,8 @@ namespace GameManager.Scripts
         //Items to be toggled
         private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
 
-        private static int _physioTherapyIteration;
+        //TODO: Revert this
+        public static int _physioTherapyIteration;
 
         private void Start()
         {
@@ -31,6 +32,7 @@ namespace GameManager.Scripts
             PlayerPrefs.SetString("GameManager.ActiveScene", mainSceneName);
             _physioTherapyIteration = 0;
         }
+
 
         // Update is called once per frame
         void FixedUpdate()
@@ -76,6 +78,7 @@ namespace GameManager.Scripts
                 //If this is the scene that should be active and its ready then we set it as the active scene
                 if (setActive && s.name == _activeScene && s.isLoaded)
                 {
+                    Debug.Log("Setting " + s.name + " as the active scene");
                     SceneManager.SetActiveScene(s);
                 }
             }
@@ -88,6 +91,7 @@ namespace GameManager.Scripts
                 ToggleItems[tag] = GameObject.FindWithTag(tag);
             }
 
+            //TODO: Null check this in case its not found or the game manager isn't running
             ToggleItems[tag].SetActive(state);
         }
 
@@ -101,7 +105,6 @@ namespace GameManager.Scripts
         //Use this to load a Scene, Leave unload scene blank if you dont want to unload a scene
         public static void LoadNewScene(string sceneToLoad, string unloadScene)
         {
-            Debug.Log("SceneToLoad " + sceneToLoad);
             PlayerPrefs.SetString("GameManager.LoadScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.ActiveScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.UnloadScene", unloadScene);

@@ -1164,7 +1164,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3004,7 +3004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e071ec2e69b542a002b1237115c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endMenu: {fileID: 1483794984}
 --- !u!1 &1500412695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,8 +3891,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101873281}
-        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
-        m_MethodName: restart
+        m_TargetAssemblyTypeName: Puzzles.PhysioTherapy.Scripts.RestartControl, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4089,7 +4088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e071ec2e69b542a002b1237115c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endMenu: {fileID: 1325369003}
 --- !u!1 &2131216044
 GameObject:
   m_ObjectHideFlags: 0
