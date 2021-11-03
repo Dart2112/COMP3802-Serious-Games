@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     public Transform[] waypoint;
     int waypointIndex;
     public GameObject idle;
+    public DialogueTrigger dialogueTrigger;
 
     public float speed = 10f;
 
@@ -56,6 +57,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Destroy(gameObject);
             idle.SetActive(true);
+            dialogueTrigger.TriggerDialogue();
         }
 
         waypointIndex++;
