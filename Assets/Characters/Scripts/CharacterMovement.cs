@@ -44,7 +44,7 @@ public class CharacterMovement : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
 
-        if (waypoint[waypointIndex].position == transform.position)
+        if (Vector2.Distance(transform.position, waypoint[waypointIndex].position) <= 0.02f)
         {
             nextWaypoint();
         }
