@@ -9,7 +9,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         public Text fails; // Current count of failures text field
         private int _blockCounter; // Count of stacked blocks
         private int _failCounter; // Count of failures    
-        private int _goal = 9; // Block count goal
+        private int _goal = 2; // Block count goal
         private int _max = 3; // Fail Limit
 
         [Tooltip("End Menu UI Screen")] public GameObject endMenu;
@@ -112,7 +112,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             AdjustItemPositions();
         }
 
-        // Updates when block collides with another block, sets end timer when goal is reached. Differs from UpdateBlockCounter by playing success sound and sets ending
+        // Updates when block collides with another block, sets end timer when goal is reached
         public void UpdateBlockNo()
         {
             _blockCounter += 1;
@@ -153,10 +153,12 @@ namespace Puzzles.PhysioTherapy.Scripts
             if (_failCounter == _max)
             {
                 //TODO: Find a way to stop the blocks moving without stopping everything
-                SetDirection(0);
+                direction = 0;
                 failMenu.SetActive(true);
                 _totalFailure.Play();
+                
                 removeRigidBody();
+
             }
             else _fail.Play();
         }
@@ -220,19 +222,13 @@ namespace Puzzles.PhysioTherapy.Scripts
         // Sets the new current object name and initial direction
         public void SetCurrentObjectName(GameObject obj)
         {
-            if (_failCounter != _max)
-            {
-                _currentObject = obj;
-                SetDirection(1);
-            }
-            else SetDirection(0);
-            
+            _currentObject = obj;
+            SetDirection(1);
         }
 
         // Sets block transform direction
         public void SetDirection(int i)
         {
-            Debug.Log("setting Direction to " + i);
             direction = i;
         }
 

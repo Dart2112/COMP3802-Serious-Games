@@ -10,6 +10,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             // Will need to be modified
             //UnityEngine.SceneManagement.SceneManager.LoadScene("PhysioTherapyPuzzle");
             //GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
+            //GameObject.Find("UIBehaviour").GetComponent<UIBehaviour>().unPause();
             GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
         }
 

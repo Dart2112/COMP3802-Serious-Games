@@ -142,5 +142,10 @@ namespace GameManager.Scripts
             _physioTherapyIteration++;
             Debug.Log("Iteration" + _physioTherapyIteration);
         }
+
+        public static int getPhysioCount()
+        {
+            return _physioTherapyIteration;
+        }
     }
 }
