@@ -22,7 +22,10 @@ namespace GameManager.Scripts
         private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
 
         //TODO: Revert this
-        public static int _physioTherapyIteration;
+        public static int physioTherapyIteration;
+
+        //TODO: Maybe integrate with other variables. In place as a bandaid solution for presentation
+        public static string sceneActive;
 
         private void Start()
         {
@@ -30,7 +33,8 @@ namespace GameManager.Scripts
             PlayerPrefs.SetString("GameManager.LoadScene", mainSceneName);
             PlayerPrefs.SetString("GameManager.UnloadScene", "");
             PlayerPrefs.SetString("GameManager.ActiveScene", mainSceneName);
-            _physioTherapyIteration = 0;
+            physioTherapyIteration = 0;
+            sceneActive = "";
         }
 
 
@@ -63,6 +67,7 @@ namespace GameManager.Scripts
             if (activeScene != "")
             {
                 _activeScene = activeScene;
+                sceneActive = activeScene;
                 Debug.Log("Setting active scene to " + activeScene);
                 PlayerPrefs.SetString("GameManager.ActiveScene", "");
             }
@@ -139,13 +144,18 @@ namespace GameManager.Scripts
         // Keeps track of the number of restarts for the physio puzzle
         public static void PhysioIterate()
         {
-            _physioTherapyIteration++;
-            Debug.Log("Iteration" + _physioTherapyIteration);
+            physioTherapyIteration++;
+            Debug.Log("Iteration" + physioTherapyIteration);
         }
 
         public static int getPhysioCount()
         {
-            return _physioTherapyIteration;
+            return physioTherapyIteration;
+        }
+
+        // TODO: Maybe integrate with other variables. In place as a bandaid solution for presentation
+        public static string getCurrentScene() {
+            return sceneActive;
         }
     }
 }
