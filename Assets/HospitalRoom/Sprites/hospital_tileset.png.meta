@@ -248,6 +248,9 @@ TextureImporter:
   - first:
       213: -1332095281838260309
     second: Collision
+  - first:
+      213: 1217226999613276643
+    second: Entire_Window
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -699,7 +702,7 @@ TextureImporter:
         serializedVersion: 2
         x: 192
         y: 513
-        width: 16
+        width: 15
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -718,12 +721,12 @@ TextureImporter:
       name: window_tl
       rect:
         serializedVersion: 2
-        x: 176
+        x: 177
         y: 529
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 15
+        height: 9
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -741,10 +744,10 @@ TextureImporter:
         serializedVersion: 2
         x: 192
         y: 529
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 15
+        height: 9
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -970,10 +973,10 @@ TextureImporter:
       name: documents_1
       rect:
         serializedVersion: 2
-        x: 159
-        y: 256
-        width: 16
-        height: 16
+        x: 161
+        y: 257
+        width: 12
+        height: 13
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -991,10 +994,10 @@ TextureImporter:
       name: documents_2
       rect:
         serializedVersion: 2
-        x: 208
-        y: 256
-        width: 16
-        height: 16
+        x: 210
+        y: 257
+        width: 14
+        height: 14
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2075,6 +2078,27 @@ TextureImporter:
       bones: []
       spriteID: baf7e0f1662738de0800000000000000
       internalID: -1332095281838260309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entire_Window
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 503
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1c6fac18574e010800000000000000
+      internalID: 1217226999613276643
       vertices: []
       indices: 
       edges: []

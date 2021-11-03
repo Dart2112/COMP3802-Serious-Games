@@ -9,7 +9,7 @@ namespace Puzzles.OT_Assets.Scripts
         public AnimationPlayer animations;
         public GameObject greenBar, box;
         public float speed = 0.05f;
-        public float speedRamp = 0.03f;
+        public float speedRamp = 0.005f;
 
         //The prefabs to be spawned when the player hits or misses the target
         public GameObject hitPrefab;
@@ -20,6 +20,7 @@ namespace Puzzles.OT_Assets.Scripts
         private int _hits, _misses;
 
         private int _direction = 1;
+
 
         private enum GameState
         {
@@ -32,6 +33,7 @@ namespace Puzzles.OT_Assets.Scripts
 
         private void Start()
         {
+            GameManager.Scripts.GameManager.ToggleItem("MainMenus", false);
             _gameState = GameState.Start;
             startPanel.SetActive(true);
             endPanel.SetActive(false);
@@ -39,8 +41,6 @@ namespace Puzzles.OT_Assets.Scripts
 
         void Update()
         {
-        //TODO: Detect end of play and move back to previous scene
-        //TODO: Submit scores
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (_gameState == GameState.Start)
@@ -85,6 +85,14 @@ namespace Puzzles.OT_Assets.Scripts
                         //Spawn the miss prefab to make it clear to the player that they failed to hit the box
                         Instantiate(missPrefab);
                     }
+                }
+                else if (_gameState == GameState.End)
+                {
+                    //Return to the main menu
+                    //TODO: Revert this to load the main menu
+                    //GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
+                    //GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
+                    GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "OT Puzzle");
                 }
             }
 
@@ -134,6 +142,27 @@ namespace Puzzles.OT_Assets.Scripts
             _gameState = GameState.End;
             endPanel.SetActive(true);
             endPanel.GetComponent<ScoreDisplayControl>().UpdateScores(_hits, _misses);
+            //TODO: Submit scores
+            int score;
+            if (_misses == 0)
+            {
+                score = 3;
+            }
+            else if (_misses <= 2)
+            {
+                score = 2;
+            }
+            else if (_misses <= 5)
+            {
+                score = 1;
+            }
+            else
+            {
+                score = 0;
+            }
+
+            GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.OccupationalTherapy,
+                score);
         }
 
         private void MoveGreenBox()

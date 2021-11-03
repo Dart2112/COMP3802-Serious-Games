@@ -49,16 +49,18 @@ namespace Puzzles.OT_Assets.Scripts
 
         public void AnimateForward()
         {
-            if (_arr.Length > (_index + 1))
+            if (_arr.Length - 1 == _index + 1)
             {
-                _index += 1;
+                _index++;
                 Animate();
-            }
-            else
-            {
                 Debug.Log("Reached End of Animations");
                 //Trigger the end of game state
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<GameBarBehaviour>().EndGame();
+            }
+            else
+            {
+                _index++;
+                Animate();
             }
         }
 
