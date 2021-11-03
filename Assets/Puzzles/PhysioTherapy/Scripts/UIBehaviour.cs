@@ -152,7 +152,6 @@ namespace Puzzles.PhysioTherapy.Scripts
 
             if (_failCounter == _max)
             {
-                //TODO: Find a way to stop the blocks moving without stopping everything
                 SetDirection(0);
                 failMenu.SetActive(true);
                 _totalFailure.Play();
@@ -236,6 +235,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             direction = i;
         }
 
+        // Removes the rigidbody component from all block objects
         public void removeRigidBody() {
             
             _blockList = GameObject.FindGameObjectsWithTag("Block");

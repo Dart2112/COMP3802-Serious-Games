@@ -7,8 +7,10 @@ namespace Puzzles.PhysioTherapy.Scripts
     public class ButtonBehaviour : MonoBehaviour
     {
         public void Continue() {
-            int score; // Score to be returned
-            int result = GameManager.Scripts.GameManager.getPhysioCount(); // Number of retrys
+            // Score to be pushed
+            int score;
+            // Number of retrys
+            int result = GameManager.Scripts.GameManager.getPhysioCount();
 
             if (result == 0)
             {
@@ -22,22 +24,21 @@ namespace Puzzles.PhysioTherapy.Scripts
                 score = 1;
             }
 
+            // Pushing puzzle score
             GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.PhysioTherapy, score);
-            //GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
+            // Loading OT puzzle
             GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "PhysioTherapyPuzzle");
         }
 
         public void Restart() {
-            //Debug.Log("Running Restart");
+            // Iterating physio loop number
             GameManager.Scripts.GameManager.PhysioIterate();
-            // Will need to be modified
-            //UnityEngine.SceneManagement.SceneManager.LoadScene("PhysioTherapyPuzzle");
-            //GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
-            //GameObject.Find("UIBehaviour").GetComponent<UIBehaviour>().unPause();
+            // Reloading the scene
             GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
         }
 
         public void Quit() {
+            // Quitting to main menu
             GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "PhysioTherapyPuzzle");
         }
     }

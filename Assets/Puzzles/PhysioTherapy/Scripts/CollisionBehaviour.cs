@@ -5,7 +5,6 @@ namespace Puzzles.PhysioTherapy.Scripts
     public class CollisionBehaviour : MonoBehaviour
     {
         private GameObject _myPrefab;
-        //public Transform sceneStartPos; // Scene Block starting position
         private Transform _startPos; // Block starting position
 
         private bool _collided; // Has this block collided with another block
