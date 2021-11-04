@@ -13,6 +13,8 @@ public class DialogueBox : MonoBehaviour
     private Queue<string> sentences;
     private Queue<string> names;
 
+    private string test;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +87,7 @@ public class DialogueBox : MonoBehaviour
     {
         Debug.Log("End");
         animator.SetBool("isOpen", false);
-        string test = GameManager.Scripts.GameManager.getCurrentScene();
+        test = GameManager.Scripts.GameManager.getCurrentScene();
         
         // Because this method is re-used, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Into_Start")) {
