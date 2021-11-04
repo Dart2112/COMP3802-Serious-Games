@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 
 namespace Puzzles.OT_Assets.Scripts
@@ -33,8 +34,11 @@ namespace Puzzles.OT_Assets.Scripts
 
         private void Start()
         {
+            //Disable the main menu if its there
             GameManager.Scripts.GameManager.ToggleItem("MainMenus", false);
+            //Make sure the game knows its in the start state
             _gameState = GameState.Start;
+            //Set UIs
             startPanel.SetActive(true);
             endPanel.SetActive(false);
         }
@@ -71,7 +75,7 @@ namespace Puzzles.OT_Assets.Scripts
                         //Increase the speed of the cursor box to make the game more difficult
                         speed += speedRamp;
                         //Spawn the hit prefab to make sure the player knows that they did the right thing
-                        //Instantiate(hitPrefab);
+                        Instantiate(hitPrefab);
                     }
                     else
                     {
@@ -83,19 +87,21 @@ namespace Puzzles.OT_Assets.Scripts
                         //Decrease the speed again to where it was
                         speed += -speedRamp;
                         //Spawn the miss prefab to make it clear to the player that they failed to hit the box
-                        //Instantiate(missPrefab);
+                        Instantiate(missPrefab);
                     }
                 }
                 else if (_gameState == GameState.End)
                 {
-                    //Return to the main menu
-                    //TODO: Revert this to load the main menu
+                    //TODO: Make this go where ever
                     //GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
                     //GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
                     GameManager.Scripts.GameManager.LoadNewScene("PhysiotherapyPuzzle", "OT Puzzle");
                 }
             }
+        }
 
+        private void FixedUpdate()
+        {
             // Animate the cursor back and forth, but only if the game is running
             if (_gameState == GameState.Playing)
             {
@@ -136,6 +142,7 @@ namespace Puzzles.OT_Assets.Scripts
                 box.transform.Translate(translation);
             }
         }
+
 
         public void EndGame()
         {
