@@ -93,5 +93,8 @@ public class DialogueBox : MonoBehaviour
         if (test.Equals("Into_Start")) {
             GameManager.Scripts.GameManager.LoadNewScene("Into_End", "Into_Start");
         }
+        if (test.Equals("Into_End")) {
+            GameManager.Scripts.GameManager.LoadNewScene("notebook better", "Into_End");
+        }
     }
 }

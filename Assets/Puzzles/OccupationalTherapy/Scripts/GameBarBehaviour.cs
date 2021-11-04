@@ -71,7 +71,7 @@ namespace Puzzles.OT_Assets.Scripts
                         //Increase the speed of the cursor box to make the game more difficult
                         speed += speedRamp;
                         //Spawn the hit prefab to make sure the player knows that they did the right thing
-                        Instantiate(hitPrefab);
+                        //Instantiate(hitPrefab);
                     }
                     else
                     {
@@ -83,7 +83,7 @@ namespace Puzzles.OT_Assets.Scripts
                         //Decrease the speed again to where it was
                         speed += -speedRamp;
                         //Spawn the miss prefab to make it clear to the player that they failed to hit the box
-                        Instantiate(missPrefab);
+                        //Instantiate(missPrefab);
                     }
                 }
                 else if (_gameState == GameState.End)
@@ -92,7 +92,7 @@ namespace Puzzles.OT_Assets.Scripts
                     //TODO: Revert this to load the main menu
                     //GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
                     //GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
-                    GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "OT Puzzle");
+                    GameManager.Scripts.GameManager.LoadNewScene("PhysiotherapyPuzzle", "OT Puzzle");
                 }
             }
 
