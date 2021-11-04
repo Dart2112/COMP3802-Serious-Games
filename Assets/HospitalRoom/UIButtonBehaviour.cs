@@ -7,7 +7,7 @@ public class UIButtonBehaviour : MonoBehaviour
     public GameObject phone;
     public GameObject noteBook;
 
-    void start() {
+    void Start() {
         //phone = GameObject.Find("Canvas");
         //noteBook = GameObject.Find("Canvas");
         noteBook.SetActive(false);
@@ -16,11 +16,23 @@ public class UIButtonBehaviour : MonoBehaviour
 
     public void OpenPhone()
     {
+        Debug.Log("openphone");
         phone.SetActive(true);
     }
 
     public void OpenNotebook()
     {
+        Debug.Log("opennotebook");
         noteBook.SetActive(true);
+    }
+
+    public void CloseNotebook() {
+        Debug.Log("closing notebook");
+        noteBook.SetActive(false);
+    }
+
+    public void ClosePhone() {
+        Debug.Log("closing phone");
+        phone.SetActive(false);
     }
 }
