@@ -8,8 +8,6 @@ public class UIButtonBehaviour : MonoBehaviour
     public GameObject noteBook;
 
     void Start() {
-        //phone = GameObject.Find("Canvas");
-        //noteBook = GameObject.Find("Canvas");
         noteBook.SetActive(false);
         phone.SetActive(false);
     }

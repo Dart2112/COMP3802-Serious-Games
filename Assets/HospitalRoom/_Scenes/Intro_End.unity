@@ -8283,7 +8283,7 @@ GameObject:
   - component: {fileID: 777466486}
   - component: {fileID: 777466485}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Physio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8351,7 +8351,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 777466486}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1965371163}
+        m_TargetAssemblyTypeName: PhoneButtonBehaviour, Assembly-CSharp
+        m_MethodName: LoadPhysioTherapyPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &777466486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10579,7 +10591,7 @@ GameObject:
   - component: {fileID: 1003320688}
   - component: {fileID: 1003320687}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: OT Puzzle Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10647,7 +10659,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1003320688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1965371163}
+        m_TargetAssemblyTypeName: PhoneButtonBehaviour, Assembly-CSharp
+        m_MethodName: LoadOTPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1003320688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16085,6 +16109,7 @@ GameObject:
   - component: {fileID: 1965371162}
   - component: {fileID: 1965371161}
   - component: {fileID: 1965371160}
+  - component: {fileID: 1965371163}
   m_Layer: 5
   m_Name: Phone
   m_TagString: Untagged
@@ -16186,6 +16211,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1965371163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965371158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a1f1460affdf44db5da9eadf9d2a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975921994
 GameObject:
   m_ObjectHideFlags: 0
