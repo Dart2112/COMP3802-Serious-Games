@@ -1634,7 +1634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293, y: 80}
+  m_AnchoredPosition: {x: -255.74, y: 65}
   m_SizeDelta: {x: 379.102, y: 74.2791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &236397501
@@ -10451,7 +10451,7 @@ GameObject:
   - component: {fileID: 942590602}
   - component: {fileID: 942590601}
   m_Layer: 0
-  m_Name: Physiotherapist
+  m_Name: Nurse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10497,7 +10497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 277af49f3b3911f40a83746b891e47a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 006bbee3caeca5e4aad1d35c74c569d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10516,7 +10516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942590597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.62, y: 0.52, z: 0}
+  m_LocalPosition: {x: 0.8, y: -0.15, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10532,7 +10532,7 @@ Animator:
   m_GameObject: {fileID: 942590597}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24a12a82b704ef1408050e20cb7d9aab, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3984966b102e1ba4bbd2fe48535b56af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10554,10 +10554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoint:
-  - {fileID: 308858331}
-  - {fileID: 1582187195}
-  - {fileID: 1655785868}
-  idle: {fileID: 1655785867}
+  - {fileID: 2058535135}
+  idle: {fileID: 2058535133}
   dialogueTrigger: {fileID: 1837969111}
   speed: 0.5
   animator: {fileID: 942590600}
@@ -12253,10 +12251,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.19607843}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.39215687}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -12313,7 +12311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14777,7 +14775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1655785868
 Transform:
   m_ObjectHideFlags: 0
@@ -14832,7 +14830,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0a1d1e9125f3c4b4f9bb28357048d976, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7e0958ddb81fb84092de1b26382ddb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15901,7 +15899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1837969109
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15981,22 +15979,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names:
-    - Jamie
+    - Morgan
     - Gerald
-    - Jamie
-    - Gerald
-    - Jamie
+    - Morgan
     sentences:
-    - "Hi Gerald, my name is Jamie and I\u2019m a Physiotherapist. How are you going
-      today?"
-    - "I\u2019m feeling a bit sore\u2026 Struggling to do some of the simple stuff
-      like getting out of bed."
-    - "That\u2019s understandable. I heard from the nurse that we are having trouble
-      moving around."
-    - "Yes, that\u2019s right."
-    - 'Alrighty, I have a little activity we can try to help with that issue.
-
-'
+    - All ready to go?
+    - "Yes, thank you so much for your efforts. I\u2019m glad to finally go home
+      and return to normal."
+    - "It\u2019s my pleasure, Gerald. Take my hand so I can walk out to the front
+      where your daughter is waiting."
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0
@@ -16060,8 +16051,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 83ca99e32013f5d4ea1803202256addc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -16312,7 +16303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2058535134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16372,7 +16363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058535133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: -0.15, z: 1}
+  m_LocalPosition: {x: 0.8, y: -0.15, z: 1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
