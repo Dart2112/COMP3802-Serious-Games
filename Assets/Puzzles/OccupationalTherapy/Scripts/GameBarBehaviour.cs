@@ -1,9 +1,8 @@
-using System;
+using Puzzles.OT_Assets.Scripts;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 
-namespace Puzzles.OT_Assets.Scripts
+namespace Puzzles.OccupationalTherapy.Scripts
 {
     public class GameBarBehaviour : MonoBehaviour
     {
