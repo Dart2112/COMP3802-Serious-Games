@@ -14,12 +14,14 @@ public class DialogueBox : MonoBehaviour
     private Queue<string> names;
 
     private string test;
+    private UIButtonBehaviour behaviour;
 
     // Start is called before the first frame update
     void Start()
     {
         names = new Queue<string>();
         sentences = new Queue<string>();
+        behaviour = GameObject.Find("Behaviour").GetComponent<UIButtonBehaviour>();
     }
 
     // Update is called once per frame
@@ -89,9 +91,23 @@ public class DialogueBox : MonoBehaviour
         animator.SetBool("isOpen", false);
         test = GameManager.Scripts.GameManager.getCurrentScene();
         
-        // Because this method is re-used, getting the currently loaded scene checks what scene to load next
+        // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Into_Start")) {
             GameManager.Scripts.GameManager.LoadNewScene("Into_End", "Into_Start");
         }
+
+        if (test.Equals("Into_End")) {
+            // Allow Button Behaviour to work
+            behaviour.AllowOpen();
+        }
+
+
+        if (test.Equals("Physiotherapist_Start"))
+        {
+            // Allow Button Behaviour to work
+            GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "Physiotherapist_Start");
+        }
+
+
     }
 }
