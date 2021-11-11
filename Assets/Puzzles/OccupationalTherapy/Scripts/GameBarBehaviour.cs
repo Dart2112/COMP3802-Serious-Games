@@ -94,7 +94,7 @@ namespace Puzzles.OccupationalTherapy.Scripts
                     //TODO: Make this go where ever
                     //GameManager.Scripts.GameManager.ToggleItem("MainMenus", true);
                     //GameManager.Scripts.GameManager.UnloadScene("OT Puzzle", "MainMenus");
-                    GameManager.Scripts.GameManager.LoadNewScene("PhysiotherapyPuzzle", "OT Puzzle");
+                    GameManager.Scripts.GameManager.LoadNewScene("OT_End", "OT Puzzle");
                 }
             }
         }

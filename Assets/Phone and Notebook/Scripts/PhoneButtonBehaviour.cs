@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace HospitalRoom.Scripts
+namespace Phone_and_Notebook.Scripts
 {
     public class PhoneButtonBehaviour : MonoBehaviour
     {
         public void LoadPhysioEntrance() {
-            GameManager.Scripts.GameManager.LoadNewScene("Physiotherapist_Start", "Into_End");
+            GameManager.Scripts.GameManager.LoadNewScene("Physiotherapist_Start", "Intro_End");
         }
 
         public void LoadPhysioTherapyPuzzle()
@@ -15,7 +15,7 @@ namespace HospitalRoom.Scripts
 
         public void LoadOTPuzzle()
         {
-            GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "Into_End");
+            GameManager.Scripts.GameManager.LoadNewScene("OT_Start", "Intro_End");
         }
     
     }
