@@ -92,11 +92,11 @@ public class DialogueBox : MonoBehaviour
         test = GameManager.Scripts.GameManager.getCurrentScene();
         
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
-        if (test.Equals("Into_Start")) {
-            GameManager.Scripts.GameManager.LoadNewScene("Into_End", "Into_Start");
+        if (test.Equals("Intro_Start")) {
+            GameManager.Scripts.GameManager.LoadNewScene("Intro_End", "Intro_Start");
         }
 
-        if (test.Equals("Into_End")) {
+        if (test.Equals("Intro_End")) {
             // Allow Button Behaviour to work
             behaviour.AllowOpen();
         }
