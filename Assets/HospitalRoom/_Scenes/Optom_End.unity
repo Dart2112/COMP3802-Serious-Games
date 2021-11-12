@@ -15981,8 +15981,9 @@ MonoBehaviour:
     names:
     - Max
     sentences:
-    - Quadrantanopia takes a while to get used to, but together we can work through
-      this. I will see you at your next appointment, Gerald.
+    - That gives us a really good understanding of how your vision has been affected.
+      We can work with the other health professionals to make sure we work on reducing
+      your risk of falling again while we see how it goes over the next few months.
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0

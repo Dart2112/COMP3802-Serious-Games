@@ -15987,21 +15987,15 @@ MonoBehaviour:
     - Gerald
     - Max
     - Gerald
-    - Max
     sentences:
     - Hi there, you must be Gerald correct?
-    - Yes.
-    - "You can call me Max, I\u2019m the resident optometrist here at Mallard. I
-      wanted to check up on your vision as many stroke sufferers have vision issues."
-    - Oh, yeah. I keep getting spots in the bottom right of my vision.
-    - "Ah that\u2019s called quadrantanopia. Let\u2019s work together to figure out
-      a way to work around it.\n"
-    - 'Good, because I really want to get back to my dog, Trixie.
-
-'
-    - 'I have just the exercise for that!
-
-'
+    - Yes
+    - "My name is Max, I\u2019m an optometrist here at the hospital. I wanted to
+      check up on your vision some people can have problems with their peripheral
+      vision after a stroke and we want to make sure you don\u2019t fall again.  "
+    - Oh, yes now that you say that I have had some trouble with that.
+    - "Let\u2019s work together to test how your peripheral vision is."
+    - Sounds good
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0

@@ -15988,15 +15988,15 @@ MonoBehaviour:
     - Terry
     sentences:
     - "Hi Gerald, I\u2019m Terry. I\u2019m an Exercise Physiotherapist. I\u2019ve
-      heard we are wanting to return home, is that correct?"
+      heard you are wanting to return home, is that correct?"
     - "That\u2019s correct, my garden isn\u2019t going to take care of itself, and
-      what of my dog Trixie.\r"
-    - Of course! However, before we return home, I just want to make sure your reflexes
+      I\u2019m worried about my dog Trixie"
+    - Of course! However, before you return home, I just want to make sure your reflexes
       are strong enough in order to catch yourself if you lose balance or if Trixie
       gets too excited for a hug.
     - Trixie sure does have a lot of energy.
-    - As I thought. I brought this exercise bike with me today, lets hop on it and
-      try this little game.
+    - "I\u2019m sure she does. I brought this exercise bike with me today. I\u2019ll
+      get you to hop on it and try this little game."
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0

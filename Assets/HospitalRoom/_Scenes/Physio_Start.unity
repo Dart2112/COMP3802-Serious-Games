@@ -15994,9 +15994,7 @@ MonoBehaviour:
     - "That\u2019s understandable. I heard from the nurse that we are having trouble
       moving around."
     - "Yes, that\u2019s right."
-    - 'Alrighty, I have a little activity we can try to help with that issue.
-
-'
+    - Alrighty, I have a little activity we can try to help with that issue.
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0

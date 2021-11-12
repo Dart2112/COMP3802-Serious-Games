@@ -16023,18 +16023,18 @@ MonoBehaviour:
     - Gerald
     - Morgan
     sentences:
-    - Hi Gerald! My name is Morgan and I will be your nurse for today. How have you
-      been feeling today?
+    - Hi Gerald! My name is Morgan and I will be your nurse for today. How are you
+      feeling today?
     - "I\u2019m still feeling a bit sore and I\u2019m struggling to keep balance
       when doing the simple stuff like walking around the ward."
     - I see, and the nurses told me you are eager to head home?
     - "Very much so. I miss my dog Trixie and my garden, and I don\u2019t want to
       go to the nursing home, its far away from my family\u2026"
-    - "That\u2019s understandable. The staff here at Mallard Hospital will do our
-      upmost to make sure we can achieve that, specialise in patient-centred care
-      here. Have you seen any of our health professionals yet?"
+    - "That\u2019s understandable. The staff here at this hospital will do our utmost
+      to make sure you can do that. Have you seen any of our health professionals
+      yet?"
     - "I\u2019ve seen a chap who helped put the names to words. I have been trying
-      to do the exercises they gave me.\n"
+      to do the exercises they gave me. "
     - Awesome! Let me just finish checking your vitals and I will organise some appointments
       for you today.
 --- !u!1 &1885716019

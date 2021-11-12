@@ -15986,11 +15986,12 @@ MonoBehaviour:
     - Sidney
     sentences:
     - "Hi Gerald, my name is Sidney and I\u2019m one of the Occupational Therapists
-      in Mallard Hospital. How are we holding up today?"
+      here in the hospital. How are you holding up today?"
     - "I\u2019ve been better, I really want to go home. I miss my dog Trixie."
     - "Completely understandable. As you know, things won\u2019t be quite the same
       as before the surgery. So, I\u2019m going to show you some ways to make things
-      safer for you when you get home. Let\u2019s begin with putting on shoes. "
+      easier for you to look after yourself when you get home. Let\u2019s begin with
+      putting on shoes. "
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0

@@ -15984,10 +15984,9 @@ MonoBehaviour:
     - Morgan
     sentences:
     - All ready to go?
-    - "Yes, thank you so much for your efforts. I\u2019m glad to finally go home
-      and return to normal."
-    - "It\u2019s my pleasure, Gerald. Take my hand so I can walk out to the front
-      where your daughter is waiting."
+    - "Yes, thank you so much. I\u2019m glad to finally go home and return to normal"
+    - "It\u2019s my pleasure, Gerald. Let\u2019s walk out to the front where your
+      daughter is waiting."
 --- !u!1 &1949842148
 GameObject:
   m_ObjectHideFlags: 0
