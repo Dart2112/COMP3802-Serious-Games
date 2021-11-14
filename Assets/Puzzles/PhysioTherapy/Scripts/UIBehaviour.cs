@@ -37,7 +37,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         [Tooltip("EndTime Timer")] public float endTime; // End timer for when goal is reached.
         private bool _wait; // Are we still waiting until fail number can be updated.
         private bool _ending; // Are we greater than the goal counter.
-        private bool _ended;
+        private bool _ended; // Game has ended
 
         private GameObject[] _blockList; // List of all blocks currently on the screen. Used to determine block number.
 
@@ -92,18 +92,19 @@ namespace Puzzles.PhysioTherapy.Scripts
             if (_blockCounter >= _goal && endTime < 0)
             {
                 //Time.timeScale = 0;
-                
+
                 direction = 0;
                 endCountDown.SetActive(false);
                 countDownCircle.SetActive(false);
                 endMenu.SetActive(true);
 
-                if (!_ended) {
+                if (!_ended)
+                {
                     _ended = true;
                     _complete.Play();
                     removeRigidBody();
                 }
-                
+
             }
         }
 
@@ -226,7 +227,7 @@ namespace Puzzles.PhysioTherapy.Scripts
                 SetDirection(1);
             }
             else SetDirection(0);
-            
+
         }
 
         // Sets block transform direction
@@ -236,11 +237,12 @@ namespace Puzzles.PhysioTherapy.Scripts
             direction = i;
         }
 
-        public void removeRigidBody() {
-            
+        public void removeRigidBody()
+        {
             _blockList = GameObject.FindGameObjectsWithTag("Block");
             Debug.Log("removing rb from " + _blockList.Length);
-            for (int i = 0; i < _blockList.Length ; i++) {
+            for (int i = 0; i < _blockList.Length; i++)
+            {
                 Rigidbody2D rb = _blockList[i].GetComponent<Rigidbody2D>();
                 Destroy(rb);
             }

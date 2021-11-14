@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011a852729a9f66448dfedcf73dd1784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionBehaviour: {fileID: 4921316481381750618}
 --- !u!1 &4921316481381750618
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,4 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0061a1d9e2227bb438bed8afb4d814c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneStartPos: {fileID: 0}
+  _blockDropped: 1

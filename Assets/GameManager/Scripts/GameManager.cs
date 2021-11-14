@@ -154,7 +154,8 @@ namespace GameManager.Scripts
         }
 
         // TODO: Maybe integrate with other variables. In place as a bandaid solution for presentation
-        public static string getCurrentScene() {
+        public static string getCurrentScene()
+        {
             return sceneActive;
         }
     }

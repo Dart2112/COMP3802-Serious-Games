@@ -29,7 +29,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             //ui.AdjustItemPositions();
             Debug.Log("CurrentObjectName " + this.name);
 
-            colsScript = this.gameObject.GetComponentInChildren(typeof(CollisionBehaviour)) as CollisionBehaviour;
+            colsScript = this.gameObject.GetChild(0).GetComponent<CollisionBehaviour>();
         }
 
         // Update is called once per frame

@@ -11,7 +11,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         // Start is called before the first frame update
         void Start()
         {
-            GameManager.Scripts.GameManager.ToggleItem("MainMenus", false);
+            //GameManager.Scripts.GameManager.ToggleItem("MainMenus", false);
             /*    GameObject myPrefab = GameAssets.i.block;
             Instantiate(myPrefab, startPos.position, startPos.rotation);*/
             startMenu.SetActive(true);
@@ -24,7 +24,8 @@ namespace Puzzles.PhysioTherapy.Scripts
 
         }
 
-        void Update() {
+        void Update()
+        {
             if (Input.GetKeyDown("space"))
             {
                 startMenu.SetActive(false);
@@ -32,7 +33,7 @@ namespace Puzzles.PhysioTherapy.Scripts
                 Instantiate(myPrefab, startPos.position, startPos.rotation);
                 this.enabled = false;
             }
-       
+
         }
     }
 }

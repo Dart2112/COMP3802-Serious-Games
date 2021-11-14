@@ -6,7 +6,8 @@ namespace Puzzles.PhysioTherapy.Scripts
 {
     public class ButtonBehaviour : MonoBehaviour
     {
-        public void Continue() {
+        public void Continue()
+        {
             int score; // Score to be returned
             int result = GameManager.Scripts.GameManager.getPhysioCount(); // Number of retrys
 
@@ -18,7 +19,8 @@ namespace Puzzles.PhysioTherapy.Scripts
             {
                 score = 2;
             }
-            else {
+            else
+            {
                 score = 1;
             }
 
@@ -27,7 +29,8 @@ namespace Puzzles.PhysioTherapy.Scripts
             GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "PhysioTherapyPuzzle");
         }
 
-        public void Restart() {
+        public void Restart()
+        {
             //Debug.Log("Running Restart");
             GameManager.Scripts.GameManager.PhysioIterate();
             // Will need to be modified
@@ -37,7 +40,8 @@ namespace Puzzles.PhysioTherapy.Scripts
             GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
         }
 
-        public void Quit() {
+        public void Quit()
+        {
             GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "PhysioTherapyPuzzle");
         }
     }

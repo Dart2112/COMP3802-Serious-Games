@@ -90,7 +90,16 @@ public class DialogueBox : MonoBehaviour
         Debug.Log("End");
         animator.SetBool("isOpen", false);
         test = GameManager.Scripts.GameManager.getCurrentScene();
+
+        // For testing when not loaded into gamemanager. Set false when not in use
+        bool notInGameManager = true;
         
+        if (notInGameManager || test.Equals("Intro_End")) {
+            // Allow Button Behaviour to work
+            Debug.Log("Test2 is working");
+            behaviour.AllowOpen();
+        }
+
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Intro_Start")) {
             GameManager.Scripts.GameManager.LoadNewScene("Intro_End", "Intro_Start");

@@ -13,6 +13,7 @@ namespace Puzzles.PhysioTherapy.Scripts
 
         private GameObject _uiBehaviour; // Global UI behaviour Script gameobject
         private UIBehaviour _ui; // UI behaviour Script
+        public bool _blockDropped = false; // Has the player clicked space to drop the block
 
         void Start()
         {
@@ -39,16 +40,19 @@ namespace Puzzles.PhysioTherapy.Scripts
             }
             else if (collision.name != "Floor" && !_collided)
             {
-                _collided = true;
-                // Determining the next block shape
-                SelectNewPrefab();
+                if (_blockDropped)
+                {
+                    _collided = true;
+                    // Determining the next block shape
+                    SelectNewPrefab();
 
-                // Generating new block
-                Instantiate(_myPrefab, _startPos.position, _startPos.rotation);
-                _ui.UpdateBlockNo();
+                    // Generating new block
+                    Instantiate(_myPrefab, _startPos.position, _startPos.rotation);
+                    _ui.UpdateBlockNo();
 
-                // Destroying this script
-                Destroy(this.transform.parent.gameObject.GetComponent<BlockControllerV2>());
+                    // Destroying this script
+                    Destroy(this.transform.parent.gameObject.GetComponent<BlockControllerV2>());
+                }
             }
             else if (collision.name == "Floor" && _collided && !_fail)
             { // If colliding with the floor after colliding with another object and havent failed yet.
@@ -72,7 +76,6 @@ namespace Puzzles.PhysioTherapy.Scripts
 
                 Destroy(this.transform.parent.gameObject);
             }
-
         }
 
         // Psuedo-Randomly selects the next block
@@ -80,7 +83,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         {
             // Gets a random number between 1 and 3 (inclusive)
             int objNumber = Random.Range(1, 4);
-            Debug.Log("Obhject number " + objNumber);
+            Debug.Log("Object number " + objNumber);
 
             if (objNumber == 1)
             {
@@ -95,6 +98,12 @@ namespace Puzzles.PhysioTherapy.Scripts
             {
                 _myPrefab = GameAssets.i.block3;
             }
+        }
+
+        public void setDropped()
+        {
+            Debug.Log("Setting dropped");
+            _blockDropped = true;
         }
     }
 }
