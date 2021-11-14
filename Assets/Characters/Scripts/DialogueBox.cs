@@ -111,10 +111,10 @@ public class DialogueBox : MonoBehaviour
         }
 
 
-        if (test.Equals("Physiotherapist_Start"))
+        if (test.Equals("Physio_Start"))
         {
             // Allow Button Behaviour to work
-            GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "Physiotherapist_Start");
+            GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "Physio_Start");
         }
 
         if (test.Equals("OT_Start"))

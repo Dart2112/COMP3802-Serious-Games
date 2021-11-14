@@ -21,7 +21,9 @@ namespace Puzzles.PhysioTherapy.Scripts
 
         private Vector3 _camStartPos; // Camera Starting Position
         private float _blockCamDifference; // Measures the distance between the startpos and camera centre.
-        private float _colliderCamDifference; // Measures the distance between the left/right collider and camera centre. 
+
+        private float
+            _colliderCamDifference; // Measures the distance between the left/right collider and camera centre. 
 
         [Tooltip("Left collider")] public GameObject leftCollider;
         [Tooltip("Right Collider")] public GameObject rightCollider;
@@ -33,6 +35,8 @@ namespace Puzzles.PhysioTherapy.Scripts
 
         [Tooltip("Starting wait between fails time")]
         public float currentTime;
+
+        public GameObject endText;
 
         [Tooltip("EndTime Timer")] public float endTime; // End timer for when goal is reached.
         private bool _wait; // Are we still waiting until fail number can be updated.
@@ -104,7 +108,6 @@ namespace Puzzles.PhysioTherapy.Scripts
                     _complete.Play();
                     removeRigidBody();
                 }
-
             }
         }
 
@@ -153,9 +156,19 @@ namespace Puzzles.PhysioTherapy.Scripts
 
             if (_failCounter == _max)
             {
-                //TODO: Find a way to stop the blocks moving without stopping everything
                 SetDirection(0);
-                failMenu.SetActive(true);
+                //TODO: Test this code
+                if (GameManager.Scripts.GameManager.physioTherapyIteration == 2)
+                {
+                    //Has failed 3 times now, so we show the complete menu instead of fail
+                    endMenu.SetActive(true);
+                    endText.GetComponent<Text>().text = "You have used your 3 attempts";
+                }
+                else
+                {
+                    failMenu.SetActive(true);
+                }
+
                 _totalFailure.Play();
                 removeRigidBody();
             }
@@ -227,7 +240,6 @@ namespace Puzzles.PhysioTherapy.Scripts
                 SetDirection(1);
             }
             else SetDirection(0);
-
         }
 
         // Sets block transform direction

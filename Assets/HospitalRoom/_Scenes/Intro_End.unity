@@ -8353,8 +8353,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1965371163}
-        m_TargetAssemblyTypeName: PhoneButtonBehaviour, Assembly-CSharp
-        m_MethodName: LoadPhysioTherapyPuzzle
+        m_TargetAssemblyTypeName: Phone_and_Notebook.Scripts.PhoneButtonBehaviour,
+          Assembly-CSharp
+        m_MethodName: LoadPhysioEntrance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

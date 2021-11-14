@@ -4403,6 +4403,7 @@ MonoBehaviour:
   direction: 0
   moveSpeed: 0.1
   currentTime: 0
+  endText: {fileID: 410394504}
   endTime: 0
   endCountDown: {fileID: 1477927471}
   countDownCircle: {fileID: 257253654}

@@ -26,7 +26,7 @@ namespace Puzzles.PhysioTherapy.Scripts
 
             GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.PhysioTherapy, score);
             //GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "PhysioTherapyPuzzle");
-            GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "PhysioTherapyPuzzle");
+            GameManager.Scripts.GameManager.LoadNewScene("Physio_End", "PhysioTherapyPuzzle");
         }
 
         public void Restart()
@@ -42,7 +42,7 @@ namespace Puzzles.PhysioTherapy.Scripts
 
         public void Quit()
         {
-            GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "PhysioTherapyPuzzle");
+            GameManager.Scripts.GameManager.LoadNewScene("Physio_End", "PhysioTherapyPuzzle");
         }
     }
 }
