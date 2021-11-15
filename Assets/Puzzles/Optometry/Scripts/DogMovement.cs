@@ -6,6 +6,7 @@ public class DogMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform dog;
+    public GameObject endPage;
     private int counter = 0;
 
     void Start()
@@ -16,7 +17,7 @@ public class DogMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void Click()
@@ -42,6 +43,12 @@ public class DogMovement : MonoBehaviour
         {
             dog.position = new Vector2(1000, 320);
         }
+
+        if (counter == 5)
+        {
+            endPage.SetActive(true);
+        }
+
 
     }
 }
