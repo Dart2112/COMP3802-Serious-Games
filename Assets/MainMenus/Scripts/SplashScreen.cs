@@ -10,7 +10,7 @@ namespace MainMenus.Scripts
         void FixedUpdate()
         {
             currentTime++;
-            if (currentTime > timeToKeep)
+            if (currentTime == timeToKeep)
             {
                 GameManager.Scripts.GameManager.LoadNewScene("MainMenus", "Splash Screen");
             }

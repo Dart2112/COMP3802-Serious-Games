@@ -42,7 +42,7 @@ namespace GameManager.Scripts
         void FixedUpdate()
         {
             string unloadScene = PlayerPrefs.GetString("GameManager.UnloadScene");
-            //If we are unloading a scene then we add it to the list here
+            //If we are unloading a scene then we unload it here
             if (unloadScene != "")
             {
                 SceneManager.UnloadSceneAsync(unloadScene);
