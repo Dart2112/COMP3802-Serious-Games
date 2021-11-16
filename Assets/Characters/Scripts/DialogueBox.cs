@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +9,7 @@ public class DialogueBox : MonoBehaviour
     public Text dialogueText;
 
     public Animator animator;
-    
+
     private Queue<string> sentences;
     private Queue<string> names;
 
@@ -27,10 +27,9 @@ public class DialogueBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
 
@@ -75,7 +74,7 @@ public class DialogueBox : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -93,21 +92,28 @@ public class DialogueBox : MonoBehaviour
 
         // For testing when not loaded into gamemanager. Set false when not in use
         bool notInGameManager = true;
-        
-        if (notInGameManager || test.Equals("Intro_End")) {
+
+        if (notInGameManager || test.Equals("Intro_End"))
+        {
             // Allow Button Behaviour to work
             Debug.Log("Test2 is working");
             behaviour.AllowOpen();
         }
 
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
-        if (test.Equals("Intro_Start")) {
+        if (test.Equals("Intro_Start"))
+        {
             GameManager.Scripts.GameManager.LoadNewScene("Intro_End", "Intro_Start");
         }
 
-        if (test.Equals("Intro_End")) {
+        if (test.Equals("Intro_End"))
+        {
             // Allow Button Behaviour to work
             behaviour.AllowOpen();
+        }
+        else if (test.Contains("End"))
+        {
+            GameManager.Scripts.GameManager.LoadNewScene("Intro_End", GameManager.Scripts.GameManager.sceneActive);
         }
 
 
@@ -126,7 +132,5 @@ public class DialogueBox : MonoBehaviour
         {
             GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "OT_Start");
         }
-
-
     }
 }

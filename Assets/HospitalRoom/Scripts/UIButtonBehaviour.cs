@@ -9,41 +9,43 @@ public class UIButtonBehaviour : MonoBehaviour
     private bool _allowOpen;
     private string test;
 
-    void Start() {
-        noteBook.SetActive(false);
-        phone.SetActive(false);
+    void Start()
+    {
         _allowOpen = false;
     }
 
     public void OpenPhone()
     {
-        if (_allowOpen) { 
-        Debug.Log("openphone");
-        phone.SetActive(true);
-        }        
+        if (_allowOpen)
+        {
+            Debug.Log("openphone");
+            Instantiate(phone);
+        }
     }
 
     public void OpenNotebook()
     {
         if (_allowOpen)
         {
-        Debug.Log("opennotebook");
-        noteBook.SetActive(true);
+            Debug.Log("opennotebook");
+            Instantiate(noteBook);
         }
-        
     }
 
-    public void CloseNotebook() {
+    public void CloseNotebook()
+    {
         Debug.Log("closing notebook");
-        noteBook.SetActive(false);
+        Destroy(gameObject);
     }
 
-    public void ClosePhone() {
+    public void ClosePhone()
+    {
         Debug.Log("closing phone");
-        phone.SetActive(false);
+        Destroy(gameObject);
     }
 
-    public void AllowOpen() {
+    public void AllowOpen()
+    {
         _allowOpen = true;
     }
 }
