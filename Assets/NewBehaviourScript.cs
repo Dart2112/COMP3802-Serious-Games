@@ -7,7 +7,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public Image pic, face;
     public Sprite sprit;
-    public Button obj, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9;
+    public Button obj, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9; 
+    public GameObject link;
     public Text bio1, bio2, def1, def2;
 
     // Start is called before the first frame update
@@ -40,5 +41,6 @@ public class NewBehaviourScript : MonoBehaviour
         def1.enabled = true;
         def2.enabled = true;
         face.enabled = false;
+        link.SetActive(true);
     }
 }

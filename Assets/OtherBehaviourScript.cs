@@ -8,6 +8,7 @@ public class OtherBehaviourScript : MonoBehaviour
     public Image pic, face;
     public Sprite sprit;
     public Button obj, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9;
+    public GameObject link1, link2, link3, link4, link5, link6, link7, link8;
     public Text bio1, bio2, def1, def2, def3, def4, def5, def6, def7, def8, def9, def10, def11, def12, def13, def14, def15, def16, def17, def18;
 
     // Start is called before the first frame update
@@ -45,8 +46,8 @@ public class OtherBehaviourScript : MonoBehaviour
         def6.enabled = false;
         def7.enabled = false;
         def8.enabled = false;
-        def9.enabled = false;
-        def10.enabled = false;
+       // def9.enabled = false;
+       // def10.enabled = false;
         def11.enabled = false;
         def12.enabled = false;
         def13.enabled = false;
@@ -55,6 +56,14 @@ public class OtherBehaviourScript : MonoBehaviour
         def16.enabled = false;
         def17.enabled = false;
         def18.enabled = false;
+        link1.SetActive(false);
+        link2.SetActive(false);
+        link3.SetActive(false);
+        link4.SetActive(false);
+        link5.SetActive(false);
+        link6.SetActive(false);
+        link7.SetActive(false);
+        link8.SetActive(false);
         face.enabled = true;
     }
 }
