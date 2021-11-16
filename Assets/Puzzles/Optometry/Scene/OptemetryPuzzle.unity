@@ -352,7 +352,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -830,14 +830,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: When Gerald goes home it is going to be important that he can take care
-    of himself. Because of his total hip replacement, we need to be careful with
-    his hip and leg movements.<b> He should not bend hip past 90 degrees, cross his
-    legs whilst sitting, lying, or standing and limit the rotation of his leg inwards
-    or outwards.</b> So, putting on his shoes and socks is going to be a bit tricky!
-    As an occupational therapist, we will work with Gerald so he can learn how to
-    put his shoes and socks on independently using equipment to help him with this
-    task.
+  m_Text: 'Some people have their vision affected after a stroke. As an optometrist
+    we want to make sure Gerald will be safe when he returns home and so we want
+    to test his peripheral vision. When large portions of the vison are missing,
+    it could make things like walking and navigating around the home difficult for
+    Gerald to manage and will increase his risk of falls. '
 --- !u!222 &594779799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2134,51 +2131,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360360937}
   m_CullTransparentMesh: 1
---- !u!1 &1486953942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1486953944}
-  - component: {fileID: 1486953943}
-  m_Layer: 0
-  m_Name: EndScript
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1486953943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486953942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0713c8eddc5a249c687eccaa19b0af33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dog: {fileID: 0}
-  endPage: {fileID: 782533004}
---- !u!4 &1486953944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486953942}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 430.44092, y: 391.41187, z: -8.849794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493276254
 GameObject:
   m_ObjectHideFlags: 0
