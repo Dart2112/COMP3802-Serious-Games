@@ -117,6 +117,11 @@ public class DialogueBox : MonoBehaviour
             GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "Physio_Start");
         }
 
+        if (test.Equals("Optom_Start"))
+        {
+            GameManager.Scripts.GameManager.LoadNewScene("OptometryPuzzle", "Optom_Start");
+        }
+
         if (test.Equals("OT_Start"))
         {
             GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "OT_Start");

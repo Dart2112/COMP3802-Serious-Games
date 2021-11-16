@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class StartScript : MonoBehaviour
+namespace Puzzles.Optometry.Scripts
 {
-    // Start is called before the first frame update
-    public GameObject startMenu;
-
-    void Start()
+    public class StartScript : MonoBehaviour
     {
-        
-    }
+        // Start is called before the first frame update
+        public GameObject startMenu;
+        public GameObject endMenu;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
+        // Update is called once per frame
+        void Update()
         {
-            startMenu.SetActive(false);
+            if (Input.GetKeyDown("space"))
+            {
+                if (startMenu.activeSelf)
+                {
+                    startMenu.SetActive(false);
+                }
+                else if (endMenu.activeSelf)
+                {
+                    GameManager.Scripts.GameManager.LoadNewScene("Optom_End", "OptometryPuzzle");
+                }
+            }
         }
     }
 }

@@ -46,28 +46,4 @@ public class UIButtonBehaviour : MonoBehaviour
     public void AllowOpen() {
         _allowOpen = true;
     }
-
-    public void LoadPhysioEntrance()
-    {
-        test = GameManager.Scripts.GameManager.getCurrentScene();
-        Debug.Log("test is " + test);
-        GameManager.Scripts.GameManager.LoadNewScene("Physiotherapist_Start", test);
-    }
-
-    public void LoadPhysioTherapyPuzzle()
-    {
-        test = GameManager.Scripts.GameManager.getCurrentScene();
-        GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", test);
-    }
-
-/*    public void LoadOTEntrance()
-    {
-        GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", "Into_End");
-    }*/
-
-    public void LoadOTPuzzle()
-    {
-        test = GameManager.Scripts.GameManager.getCurrentScene();
-        GameManager.Scripts.GameManager.LoadNewScene("OT Puzzle", test);
-    }
 }

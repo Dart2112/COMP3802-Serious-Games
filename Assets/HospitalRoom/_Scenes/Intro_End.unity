@@ -15635,7 +15635,7 @@ GameObject:
   - component: {fileID: 1866623572}
   - component: {fileID: 1866623571}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Optom Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15703,7 +15703,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1866623572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1965371163}
+        m_TargetAssemblyTypeName: Phone_and_Notebook.Scripts.PhoneButtonBehaviour,
+          Assembly-CSharp
+        m_MethodName: LoadOptomPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1866623572
 MonoBehaviour:
   m_ObjectHideFlags: 0
