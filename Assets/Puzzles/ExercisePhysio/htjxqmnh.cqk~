@@ -1,0 +1,82 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ButtonBehaviour : MonoBehaviour
+{
+    private GameObject[] btnList;
+    private string[] colourNamArr = {"Red", "Yellow", "Green", "Blue", "Magenta", "Black"};
+    public Text targetText;
+    public string target;
+    //private Random r = new Random();
+    // Start is called before the first frame update
+    void Start()
+    {
+        btnList = GameObject.FindGameObjectsWithTag("btn");
+        targetText = GameObject.Find("TargetText").GetComponent<Text>().text;
+        test = btnList[0].GetComponentInChildren<Text>();
+
+
+        //Debug.Log("Print List test " + test.text);
+        shuffle(btnList);
+
+        updateScreen();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void SetTarget() {
+        int x = Random.Range(0, btnList.Length);
+        target = colourNamArr[x];
+        targetText.text = target;
+
+    }
+
+    void updateScreen() {
+        for (int i = 0; i < btnList.Length; i++) {
+            
+            btnList[i].GetComponentInChildren<Text>().text = colourNamArr[i];
+            int x = Random.Range(0, btnList.Length);
+
+            if (colourNamArr[x].Equals("Red"))
+            {
+                // Change this line when loading in new sprite instead
+                btnList[i].GetComponent<Image>().color = Color.red;
+            }
+            else if (colourNamArr[x].Equals("Yellow")) {
+                btnList[i].GetComponent<Image>().color = Color.yellow;
+            }
+            else if (colourNamArr[x].Equals("Green"))
+            {
+                btnList[i].GetComponent<Image>().color = Color.green;
+            }
+            else if (colourNamArr[x].Equals("Blue"))
+            {
+                btnList[i].GetComponent<Image>().color = Color.blue;
+            }
+            else if (colourNamArr[x].Equals("Magenta"))
+            {
+                btnList[i].GetComponent<Image>().color = Color.magenta;
+            }
+            else if (colourNamArr[x].Equals("Black"))
+            {
+                btnList[i].GetComponent<Image>().color = Color.black;
+            }
+        }    
+    }
+
+    // Knuth shuffle algorithm:
+    void shuffle(GameObject[] objects) {
+        for (int i = 0; i < objects.Length; i++) {
+            GameObject tmp = objects[i];
+            int r = Random.Range(i, objects.Length);
+            objects[i] = objects[r];
+            objects[r] = tmp;
+        }    
+    }
+}
