@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/HospitalRoom/_Scenes/Intro_End.unity
     guid: cfaa05ff22eeab34399ada728fbff133
   - enabled: 1
-    path: Assets/Scenes/notebook better.unity
+    path: Assets/notebook better.unity
     guid: 0c46f1437c8d54647bcd6792861f1708
   - enabled: 1
     path: Assets/HospitalRoom/_Scenes/Physio_Start.unity
