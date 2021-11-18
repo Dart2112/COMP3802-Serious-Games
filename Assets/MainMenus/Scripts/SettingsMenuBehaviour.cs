@@ -8,7 +8,6 @@ public class SettingsMenuBehaviour : MonoBehaviour
     public GameObject testObj;
     public GameObject UICanvas;
     public GameObject masterVolume;
-    public GameObject brightness;
     public GameObject qualityLevelLabel;
     private Slider slider;
 
@@ -56,17 +55,6 @@ public class SettingsMenuBehaviour : MonoBehaviour
 
         // Updating the label
         qualityLevelLabel.GetComponent<UnityEngine.UI.Text>().text = "Quality Level - " + qualityName;
-    }
-
-    /* --- Brightness Settings ---  */
-    // Maybe use screen overlay?
-    public void SetBrightness() 
-    { 
-
-    }
-
-    public void UpdateBrightness() { 
-    
     }
 
     public void testOff()
