@@ -90,16 +90,6 @@ public class DialogueBox : MonoBehaviour
         animator.SetBool("isOpen", false);
         test = GameManager.Scripts.GameManager.getCurrentScene();
 
-        // For testing when not loaded into gamemanager. Set false when not in use
-        bool notInGameManager = true;
-
-        if (notInGameManager || test.Equals("Intro_End"))
-        {
-            // Allow Button Behaviour to work
-            Debug.Log("Test2 is working");
-            behaviour.AllowOpen();
-        }
-
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Intro_Start"))
         {
@@ -117,9 +107,13 @@ public class DialogueBox : MonoBehaviour
         }
 
 
+        if (test.Equals("EP_Start"))
+        {
+            GameManager.Scripts.GameManager.LoadNewScene("ExercisePhysio", "EP_Start");
+        }
+
         if (test.Equals("Physio_Start"))
         {
-            // Allow Button Behaviour to work
             GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "Physio_Start");
         }
 

@@ -615,7 +615,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1931443603214209334}
         m_TargetAssemblyTypeName: Phone_and_Notebook.Scripts.PhoneButtonBehaviour,
           Assembly-CSharp
-        m_MethodName: LoadOTPuzzle
+        m_MethodName: LoadOtPuzzle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -744,7 +744,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416027896908651246}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1931443603214209334}
+        m_TargetAssemblyTypeName: Phone_and_Notebook.Scripts.PhoneButtonBehaviour,
+          Assembly-CSharp
+        m_MethodName: LoadExercisePhysioPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1416027897996453293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1084,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1931443603214209334}
         m_TargetAssemblyTypeName: Phone_and_Notebook.Scripts.PhoneButtonBehaviour,
           Assembly-CSharp
-        m_MethodName: LoadPhysioEntrance
+        m_MethodName: LoadPhysioPuzzle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
