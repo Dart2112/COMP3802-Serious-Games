@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         public Text fails; // Current count of failures text field
         private int _blockCounter; // Count of stacked blocks
         private int _failCounter; // Count of failures    
-        private int _goal = 9; // Block count goal
+        public int goal = 9; // Block count goal
         private int _max = 3; // Fail Limit
 
         [Tooltip("End Menu UI Screen")] public GameObject endMenu;
@@ -37,6 +38,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         public float currentTime;
 
         public GameObject endText;
+        public GameObject failText;
 
         [Tooltip("EndTime Timer")] public float endTime; // End timer for when goal is reached.
         private bool _wait; // Are we still waiting until fail number can be updated.
@@ -69,7 +71,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             _camPos = GameObject.Find("PhysioMainCamera").transform;
             _startPos = GameObject.Find("StartPos").transform;
             _camStartPos = _camPos.position;
-            count.text = _blockCounter + " / " + _goal;
+            count.text = _blockCounter + " / " + goal;
 
 
             // Getting the starting difference between the camera and other objects
@@ -93,7 +95,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             UpdateBlockCounter();
 
             // If end goal has been reached and end wait time has been completed
-            if (_blockCounter >= _goal && endTime < 0)
+            if (_blockCounter >= goal && endTime < 0)
             {
                 //Time.timeScale = 0;
 
@@ -120,9 +122,9 @@ namespace Puzzles.PhysioTherapy.Scripts
         public void UpdateBlockNo()
         {
             _blockCounter += 1;
-            count.text = _blockCounter + " / " + _goal;
+            count.text = _blockCounter + " / " + goal;
             _success.Play();
-            if (_blockCounter == _goal && !_ending)
+            if (_blockCounter == goal && !_ending)
             {
                 // Wait 4 seconds before ending
                 _ending = true;
@@ -157,12 +159,12 @@ namespace Puzzles.PhysioTherapy.Scripts
             if (_failCounter == _max)
             {
                 SetDirection(0);
-                //TODO: Test this code
                 if (GameManager.Scripts.GameManager.GetPhysioCount() == 2)
                 {
                     //Has failed 3 times now, so we show the complete menu instead of fail
                     endMenu.SetActive(true);
-                    endText.GetComponent<Text>().text = "You have used your 3 attempts";
+                    endText.SetActive(false);
+                    failText.SetActive(true);
                 }
                 else
                 {
@@ -185,7 +187,7 @@ namespace Puzzles.PhysioTherapy.Scripts
                 _blockCounter = 0;
             }
 
-            if (_blockCounter >= _goal)
+            if (_blockCounter >= goal)
             {
                 // set the screen as active
                 endCountDown.SetActive(true);
@@ -199,7 +201,7 @@ namespace Puzzles.PhysioTherapy.Scripts
                 _ending = false;
             }
 
-            count.text = _blockCounter + " / " + _goal;
+            count.text = _blockCounter + " / " + goal;
         }
 
         // Adjusting the cam pos, start pos and block collider positions
