@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
@@ -9,6 +10,8 @@ public class DialogueBox : MonoBehaviour
     public Text dialogueText;
 
     public Animator animator;
+
+    public GameObject endingPanel;
 
     private Queue<string> sentences;
     private Queue<string> names;
@@ -88,17 +91,7 @@ public class DialogueBox : MonoBehaviour
     {
         Debug.Log("End");
         animator.SetBool("isOpen", false);
-        test = GameManager.Scripts.GameManager.getCurrentScene();
-
-        // For testing when not loaded into gamemanager. Set false when not in use
-        bool notInGameManager = true;
-
-        if (notInGameManager || test.Equals("Intro_End"))
-        {
-            // Allow Button Behaviour to work
-            Debug.Log("Test2 is working");
-            behaviour.AllowOpen();
-        }
+        test = SceneManager.GetActiveScene().name;
 
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Intro_Start"))
@@ -111,15 +104,23 @@ public class DialogueBox : MonoBehaviour
             // Allow Button Behaviour to work
             behaviour.AllowOpen();
         }
+        else if (test.Equals("Ending"))
+        {
+            endingPanel.SetActive(true);
+        }
         else if (test.Contains("End"))
         {
-            GameManager.Scripts.GameManager.LoadNewScene("Intro_End", GameManager.Scripts.GameManager.sceneActive);
+            GameManager.Scripts.GameManager.LoadNewScene("Intro_End", SceneManager.GetActiveScene().name);
         }
 
 
+        if (test.Equals("EP_Start"))
+        {
+            GameManager.Scripts.GameManager.LoadNewScene("ExercisePhysio", "EP_Start");
+        }
+
         if (test.Equals("Physio_Start"))
         {
-            // Allow Button Behaviour to work
             GameManager.Scripts.GameManager.LoadNewScene("PhysioTherapyPuzzle", "Physio_Start");
         }
 

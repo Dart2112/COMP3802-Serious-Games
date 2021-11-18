@@ -158,7 +158,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             {
                 SetDirection(0);
                 //TODO: Test this code
-                if (GameManager.Scripts.GameManager.physioTherapyIteration == 2)
+                if (GameManager.Scripts.GameManager.GetPhysioCount() == 2)
                 {
                     //Has failed 3 times now, so we show the complete menu instead of fail
                     endMenu.SetActive(true);

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace GameManager.Scripts
 {
@@ -21,20 +22,17 @@ namespace GameManager.Scripts
         //Items to be toggled
         private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
 
-        //TODO: Revert this
-        public static int physioTherapyIteration;
-
-        //TODO: Maybe integrate with other variables. In place as a bandaid solution for presentation
-        public static string sceneActive;
+        private static int _physioTherapyIteration;
 
         private void Start()
         {
+            //Clear all scores as these do persist restarts
+            PlayerPrefs.DeleteAll();
             //Load the main scene and dont unload anything
             PlayerPrefs.SetString("GameManager.LoadScene", mainSceneName);
             PlayerPrefs.SetString("GameManager.UnloadScene", "");
             PlayerPrefs.SetString("GameManager.ActiveScene", mainSceneName);
-            physioTherapyIteration = 0;
-            sceneActive = "";
+            _physioTherapyIteration = 0;
         }
 
 
@@ -67,8 +65,6 @@ namespace GameManager.Scripts
             if (activeScene != "")
             {
                 _activeScene = activeScene;
-                sceneActive = activeScene;
-                Debug.Log("Setting active scene to " + activeScene);
                 PlayerPrefs.SetString("GameManager.ActiveScene", "");
             }
 
@@ -93,10 +89,12 @@ namespace GameManager.Scripts
         {
             if (!ToggleItems.TryGetValue(tag, out _))
             {
-                ToggleItems[tag] = GameObject.FindWithTag(tag);
+                GameObject obj = GameObject.FindWithTag(tag);
+                if (obj == null)
+                    return;
+                ToggleItems[tag] = obj;
             }
 
-            //TODO: Null check this in case its not found or the game manager isn't running
             ToggleItems[tag].SetActive(state);
         }
 
@@ -120,22 +118,32 @@ namespace GameManager.Scripts
         public enum Puzzle
         {
             OccupationalTherapy,
-            PhysioTherapy
+            PhysioTherapy,
+            Optometry,
+            ExercisePhysio
         }
 
         public static void SubmitScore(Puzzle puzzle, int score)
         {
-            PlayerPrefs.SetInt(puzzle.ToString() + ".score", score);
+            PlayerPrefs.SetInt(puzzle + ".score", score);
+            Debug.Log(puzzle + ".score: " + score);
         }
 
-        public static int RetrieveAverageScore()
+        public static int RetrieveScore(Puzzle puzzle)
         {
-            int i = 0;
-            int total = 0;
+            int score = PlayerPrefs.GetInt(puzzle + ".score", -1);
+            Debug.Log(puzzle + ".score: " + score);
+            return score;
+        }
+
+        public static float RetrieveAverageScore()
+        {
+            float i = 0;
+            float total = 0;
             foreach (Puzzle puzzle in Enum.GetValues(typeof(Puzzle)))
             {
                 i++;
-                total += PlayerPrefs.GetInt(puzzle.ToString() + ".score");
+                total += PlayerPrefs.GetInt(puzzle + ".score");
             }
 
             return total / i;
@@ -144,19 +152,13 @@ namespace GameManager.Scripts
         // Keeps track of the number of restarts for the physio puzzle
         public static void PhysioIterate()
         {
-            physioTherapyIteration++;
-            Debug.Log("Iteration" + physioTherapyIteration);
+            _physioTherapyIteration++;
+            Debug.Log("Iteration" + _physioTherapyIteration);
         }
 
-        public static int getPhysioCount()
+        public static int GetPhysioCount()
         {
-            return physioTherapyIteration;
-        }
-
-        // TODO: Maybe integrate with other variables. In place as a bandaid solution for presentation
-        public static string getCurrentScene()
-        {
-            return sceneActive;
+            return _physioTherapyIteration;
         }
     }
 }
