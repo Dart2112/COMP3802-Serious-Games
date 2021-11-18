@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
@@ -88,8 +89,8 @@ public class DialogueBox : MonoBehaviour
     {
         Debug.Log("End");
         animator.SetBool("isOpen", false);
-        test = GameManager.Scripts.GameManager.getCurrentScene();
-
+        test = SceneManager.GetActiveScene().name;
+        
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Intro_Start"))
         {
