@@ -75,9 +75,6 @@ EditorBuildSettings:
     path: Assets/MainMenus/Scenes/Splash Screen.unity
     guid: e650517e4858ba14b9406cd2588be7a8
   - enabled: 1
-    path: Assets/Puzzles/Optometry/_Scene/OptometryPuzzle.unity
-    guid: 765471fac7f5d4e95a40ddcf87d9b549
-  - enabled: 1
     path: Assets/Puzzles/ExercisePhysio/_Scenes/ExercisePhysio.unity
     guid: fbba6e61ea7773a41821edc435ab956c
   - enabled: 1
