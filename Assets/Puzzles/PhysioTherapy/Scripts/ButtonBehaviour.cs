@@ -9,7 +9,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         public void Continue()
         {
             int score; // Score to be returned
-            int result = GameManager.Scripts.GameManager.getPhysioCount(); // Number of retrys
+            int result = GameManager.Scripts.GameManager.GetPhysioCount(); // Number of retrys
 
             if (result == 0)
             {

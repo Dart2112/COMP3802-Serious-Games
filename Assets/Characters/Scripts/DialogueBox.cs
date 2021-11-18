@@ -11,6 +11,8 @@ public class DialogueBox : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject endingPanel;
+
     private Queue<string> sentences;
     private Queue<string> names;
 
@@ -90,7 +92,7 @@ public class DialogueBox : MonoBehaviour
         Debug.Log("End");
         animator.SetBool("isOpen", false);
         test = SceneManager.GetActiveScene().name;
-        
+
         // Because this method is re-used for dialogue, getting the currently loaded scene checks what scene to load next
         if (test.Equals("Intro_Start"))
         {
@@ -102,9 +104,13 @@ public class DialogueBox : MonoBehaviour
             // Allow Button Behaviour to work
             behaviour.AllowOpen();
         }
+        else if (test.Equals("Ending"))
+        {
+            endingPanel.SetActive(true);
+        }
         else if (test.Contains("End"))
         {
-            GameManager.Scripts.GameManager.LoadNewScene("Intro_End", GameManager.Scripts.GameManager.sceneActive);
+            GameManager.Scripts.GameManager.LoadNewScene("Intro_End", SceneManager.GetActiveScene().name);
         }
 
 
