@@ -29,6 +29,8 @@ namespace GameManager.Scripts
 
         private void Start()
         {
+            //Clear all scores as these do persist restarts
+            PlayerPrefs.DeleteAll();
             //Load the main scene and dont unload anything
             PlayerPrefs.SetString("GameManager.LoadScene", mainSceneName);
             PlayerPrefs.SetString("GameManager.UnloadScene", "");
@@ -120,12 +122,22 @@ namespace GameManager.Scripts
         public enum Puzzle
         {
             OccupationalTherapy,
-            PhysioTherapy
+            PhysioTherapy,
+            Optometry,
+            ExercisePhysio
         }
 
         public static void SubmitScore(Puzzle puzzle, int score)
         {
-            PlayerPrefs.SetInt(puzzle.ToString() + ".score", score);
+            PlayerPrefs.SetInt(puzzle + ".score", score);
+            Debug.Log(puzzle + ".score: " + score);
+        }
+
+        public static int RetrieveScore(Puzzle puzzle)
+        {
+            int score = PlayerPrefs.GetInt(puzzle + ".score", -1);
+            Debug.Log(puzzle + ".score: " + score);
+            return score;
         }
 
         public static int RetrieveAverageScore()
