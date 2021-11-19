@@ -1,0 +1,311 @@
+"ac4d3dc","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 01:46:22 +1030","Update web build",
+ 5 files changed, 11 insertions(+), 76 deletions(-)
+
+"888c94f","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 01:25:52 +1030","Physio fixes",
+ 12 files changed, 249 insertions(+), 2826 deletions(-)
+
+"2ec0c8a","ktinaf","foto0006@flinders.edu.au","Fri, 19 Nov 2021 00:26:02 +1030","UI overhauling",
+ 36 files changed, 3223 insertions(+), 2252 deletions(-)
+
+"dc6966e","jang5","liu1239@flinders.edu.au","Thu, 18 Nov 2021 16:59:29 +0800","OP bug fixed!!!",
+ 3 files changed, 51 insertions(+), 28 deletions(-)
+
+"3aad43a","ktinaf","foto0006@flinders.edu.au","Thu, 18 Nov 2021 18:04:39 +1030","Credits Scene complete",
+ 7 files changed, 1134 insertions(+), 10 deletions(-)
+
+"9955b5c","Benjamin","DNAblue2112@gmail.com","Thu, 18 Nov 2021 16:32:39 +1030","Added game end state and tested it",
+ 11 files changed, 763 insertions(+), 31 deletions(-)
+
+"d443e49","Benjamin","DNAblue2112@gmail.com","Thu, 18 Nov 2021 14:39:12 +1030","Added red icons that show who you can call",
+ 7 files changed, 953 insertions(+), 44 deletions(-)
+
+"563105c","Benjamin","DNAblue2112@gmail.com","Thu, 18 Nov 2021 13:36:51 +1030","Linked in EP puzzle to phone",
+ 5 files changed, 49 insertions(+), 32 deletions(-)
+
+"0144c4e","Benjamin","DNAblue2112@gmail.com","Thu, 18 Nov 2021 13:14:27 +1030","Update web build",
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+"e485984","jang5","liu1239@flinders.edu.au","Thu, 18 Nov 2021 10:06:56 +0800","Another OP update",
+ 1 file changed, 27 insertions(+), 48 deletions(-)
+
+"d9a54a1","jang5","liu1239@flinders.edu.au","Thu, 18 Nov 2021 07:50:53 +0800","OP update",
+ 2 files changed, 538 insertions(+), 839 deletions(-)
+
+"10e9b44","jang5","liu1239@flinders.edu.au","Wed, 17 Nov 2021 15:32:04 +0800","Updates",
+ 3 files changed, 2 insertions(+), 2 deletions(-)
+
+"b662aa2","jang5","liu1239@flinders.edu.au","Wed, 17 Nov 2021 15:13:38 +0800","Vision spots fixing",
+ 3 files changed, 13 insertions(+), 12 deletions(-)
+
+"b4b1ca9","ktinaf","foto0006@flinders.edu.au","Wed, 17 Nov 2021 14:14:00 +1030","Update Splash Screen",
+ 1 file changed, 57 insertions(+), 21 deletions(-)
+
+"340a080","ktinaf","foto0006@flinders.edu.au","Wed, 17 Nov 2021 12:18:35 +1030","fixed splash screen",
+ 2 files changed, 141 insertions(+), 80 deletions(-)
+
+"2aa41fd","Benjamin","DNAblue2112@gmail.com","Tue, 16 Nov 2021 23:23:04 +1030","Got notebook and phone working with prefabs",
+ 155 files changed, 144539 insertions(+), 206140 deletions(-)
+
+"eaa3b20","ches0072","ches0072@flinders.edu.au","Tue, 16 Nov 2021 21:45:52 +1030","Update OT_End to use prefab",
+ 1 file changed, 115 insertions(+), 1 deletion(-)
+
+"4729fbc","ches0072","ches0072@flinders.edu.au","Tue, 16 Nov 2021 21:44:54 +1030","Added Prefab for notebook UI.",
+ 64 files changed, 27695 insertions(+), 18324 deletions(-)
+
+"6e2676a","Benjamin","DNAblue2112@gmail.com","Tue, 16 Nov 2021 19:17:33 +1030","EP scene cleanup",
+ 1 file changed, 4 insertions(+), 156 deletions(-)
+
+"973e562","Benjamin","DNAblue2112@gmail.com","Tue, 16 Nov 2021 19:14:14 +1030","Added EP Puzzle",
+ 507 files changed, 35675 insertions(+), 10 deletions(-)
+
+"1c20dde","Benjamin","DNAblue2112@gmail.com","Tue, 16 Nov 2021 18:39:38 +1030","Changes to get back to where we were",
+ 12 files changed, 26 insertions(+), 20 deletions(-)
+
+"ec379c2","Benjamin","DNAblue2112@gmail.com","Tue, 16 Nov 2021 18:32:20 +1030","Optom changes",
+ 23 files changed, 3399 insertions(+), 46 deletions(-)
+
+"7050cd4","ktinaf","foto0006@flinders.edu.au","Tue, 16 Nov 2021 18:28:40 +1030","Splash Screen",
+ 8 files changed, 1153 insertions(+)
+
+"c86c541","jang5","liu1239@flinders.edu.au","Tue, 16 Nov 2021 11:16:39 +0800","Description updates",
+ 1 file changed, 6 insertions(+), 54 deletions(-)
+
+"73abe2b","jang5","liu1239@flinders.edu.au","Mon, 15 Nov 2021 17:29:40 +0800","Script updates",
+ 5 files changed, 156 insertions(+), 25 deletions(-)
+
+"6ddff3a","Benjamin","DNAblue2112@gmail.com","Mon, 15 Nov 2021 18:26:14 +1030","Fixed splash screen trying to load main menu multiple times",
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+"cc40745","Benjamin","DNAblue2112@gmail.com","Mon, 15 Nov 2021 18:16:39 +1030","Implemented Splash Screen",
+ 10 files changed, 59 insertions(+), 11 deletions(-)
+
+"355cb26","ktinaf","foto0006@flinders.edu.au","Mon, 15 Nov 2021 13:37:25 +1030","Splash Screen created, needs to be implemented",
+ 10 files changed, 1175 insertions(+), 11 deletions(-)
+
+"1e0a4f5","jang5","liu1239@flinders.edu.au","Sun, 14 Nov 2021 19:44:01 +0800","UI added for optometry puzzle",
+ 3 files changed, 953 insertions(+), 51 deletions(-)
+
+"1b0fe5e","Benjamin","DNAblue2112@gmail.com","Sun, 14 Nov 2021 21:46:15 +1030","Git physio puzzle working with 3 attempts",
+ 9 files changed, 36 insertions(+), 76 deletions(-)
+
+"cb0586b","ches0072","ches0072@flinders.edu.au","Sun, 14 Nov 2021 13:47:44 +1030","PhysioTherapy Puzzle demonstration bug fix.",
+ 15 files changed, 468 insertions(+), 191 deletions(-)
+
+"9ed8da5","jang5","liu1239@flinders.edu.au","Fri, 12 Nov 2021 19:16:31 +0800","Script updates",
+ 1 file changed, 23 insertions(+), 1 deletion(-)
+
+"6958774","jang5","liu1239@flinders.edu.au","Fri, 12 Nov 2021 09:42:09 +0800","Optometry puzzle script",
+ 4 files changed, 810 insertions(+), 513 deletions(-)
+
+"35b576a","ktinaf","foto0006@flinders.edu.au","Fri, 12 Nov 2021 11:11:20 +1030","Dialogue changed and Title screen changed",
+ 9 files changed, 42 insertions(+), 51 deletions(-)
+
+"897edc4","Benjamin","DNAblue2112@gmail.com","Thu, 11 Nov 2021 13:47:22 +1030","Game flow and scenes added to build",
+ 4 files changed, 52 insertions(+), 5 deletions(-)
+
+"554f4f0","Benjamin","DNAblue2112@gmail.com","Thu, 11 Nov 2021 13:39:35 +1030","Minor file cleanup",
+ 35 files changed, 80 insertions(+), 32 deletions(-)
+
+"241942a","Benjamin","DNAblue2112@gmail.com","Thu, 11 Nov 2021 13:20:31 +1030","Scene transitions fixed",
+ 3 files changed, 51 insertions(+), 61 deletions(-)
+
+"116e78e","ches0072","ches0072@flinders.edu.au","Wed, 10 Nov 2021 12:34:10 +1030","Made some UI changes and script restructuring. Linked in physiotherapy dialogue scene to phone.",
+ 17 files changed, 4425 insertions(+), 4079 deletions(-)
+
+"68b3a5a","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Wed, 10 Nov 2021 03:06:52 +1030","All Hospital Scenes",
+ 70 files changed, 220422 insertions(+), 91 deletions(-)
+
+"2a90066","Benjamin","DNAblue2112@gmail.com","Tue, 9 Nov 2021 22:38:00 +1030","Setup the phone buttons",
+ 11 files changed, 91 insertions(+), 21 deletions(-)
+
+"9ac392f","ches0072","ches0072@flinders.edu.au","Tue, 9 Nov 2021 16:22:35 +1030","Notebook & Phone UI Changes",
+ 4 files changed, 648 deletions(-)
+
+"91d5014","jang5","liu1239@flinders.edu.au","Mon, 8 Nov 2021 09:53:38 +0800","Vision spot correction",
+ 1 file changed, 8 insertions(+), 91 deletions(-)
+
+"3100ba2","jang5","liu1239@flinders.edu.au","Sun, 7 Nov 2021 18:24:51 +0800","Optometry puzzle scene buildup",
+ 24 files changed, 2363 insertions(+), 10 deletions(-)
+
+"c38f9c4","ches0072","ches0072@flinders.edu.au","Thu, 4 Nov 2021 15:43:17 +1030","UI fixes and updates",
+ 14 files changed, 18831 insertions(+), 5003 deletions(-)
+
+"efbbc5e","Benjamin","DNAblue2112@gmail.com","Thu, 4 Nov 2021 14:14:08 +1030","Moved cursor movement to fixed update",
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+"059c560","Benjamin","DNAblue2112@gmail.com","Thu, 4 Nov 2021 13:14:16 +1030","Changes for presentation flow",
+ 7 files changed, 266 insertions(+), 11 deletions(-)
+
+"6e3c502","ches0072","ches0072@flinders.edu.au","Thu, 4 Nov 2021 12:41:06 +1030","UI additions notebook and phone",
+ 56 files changed, 14482 insertions(+), 1035 deletions(-)
+
+"bb57b47","ches0072","ches0072@flinders.edu.au","Thu, 4 Nov 2021 12:07:54 +1030","Commit before notebook merge",
+ 8 files changed, 715 insertions(+), 27 deletions(-)
+
+"c2178a4","ches0072","ches0072@flinders.edu.au","Thu, 4 Nov 2021 09:14:55 +1030","Remove greeting screen, re-assigned buttons",
+ 4 files changed, 56 insertions(+), 976 deletions(-)
+
+"1bcafd5","ches0072","ches0072@flinders.edu.au","Thu, 4 Nov 2021 09:01:26 +1030","Start Scene and and scene transitions in place",
+ 8 files changed, 44 insertions(+), 11 deletions(-)
+
+"71e4ad4","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Thu, 4 Nov 2021 03:43:24 +1030","Dialogue and Scenes",
+ 40 files changed, 32695 insertions(+), 22443 deletions(-)
+
+"cdc01f8","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Wed, 3 Nov 2021 20:44:52 +1030","Gerald and Nurse Assets",
+ 109 files changed, 27198 insertions(+), 2 deletions(-)
+
+"541fa7b","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Wed, 3 Nov 2021 17:12:33 +1030","Revert "Code & Scene Hierarchy Cleanup"",
+ 9 files changed, 234 insertions(+), 28 deletions(-)
+
+"d693322","ches0072","ches0072@flinders.edu.au","Wed, 3 Nov 2021 12:50:30 +1030","Code & Scene Hierarchy Cleanup",
+ 9 files changed, 28 insertions(+), 234 deletions(-)
+
+"cac8633","ches0072","ches0072@flinders.edu.au","Wed, 3 Nov 2021 12:36:04 +1030","Updated Physio Puzzle",
+ 11 files changed, 569 insertions(+), 103 deletions(-)
+
+"71ef255","Benjamin","DNAblue2112@gmail.com","Wed, 3 Nov 2021 00:15:01 +1030","Fixed scene transitions in Physio Puzzle",
+ 14 files changed, 375 insertions(+), 375 deletions(-)
+
+"fe3e501","jang5","liu1239@flinders.edu.au","Tue, 2 Nov 2021 18:49:58 +0800","Separated quilt added",
+ 5 files changed, 193 insertions(+), 5 deletions(-)
+
+"8eafc87","Benjamin","DNAblue2112@gmail.com","Tue, 2 Nov 2021 20:31:47 +1030","Half the files didn't commit",
+ 4 files changed, 9 insertions(+), 8 deletions(-)
+
+"0e94d88","Benjamin","DNAblue2112@gmail.com","Tue, 2 Nov 2021 20:30:40 +1030","Fixed OT Speed and GameManager",
+ 1 file changed, 13 insertions(+), 20 deletions(-)
+
+"6597691","ches0072","ches0072@flinders.edu.au","Tue, 2 Nov 2021 19:37:02 +1030","Integrated the Physiotherapy puzzle into game manager.",
+ 9 files changed, 78 insertions(+), 27 deletions(-)
+
+"f5f7861","Benjamin","DNAblue2112@gmail.com","Tue, 2 Nov 2021 12:41:23 +1030","Fixed end state of OT puzzle",
+ 2 files changed, 9 insertions(+), 6 deletions(-)
+
+"fdc8f75","Benjamin","DNAblue2112@gmail.com","Thu, 28 Oct 2021 14:40:23 +1030","Added score management",
+ 2 files changed, 49 insertions(+)
+
+"6a5c1a9","Benjamin","DNAblue2112@gmail.com","Thu, 28 Oct 2021 14:24:10 +1030","Game Manager and OT updates",
+ 117 files changed, 186 insertions(+), 182 deletions(-)
+
+"24e9b57","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Thu, 28 Oct 2021 12:11:20 +1030","Character Movement",
+ 413 files changed, 19414 insertions(+), 20 deletions(-)
+
+"ffc9c38","Benjamin","DNAblue2112@gmail.com","Thu, 28 Oct 2021 00:37:35 +1030","Updated GameManager",
+ 4 files changed, 36 insertions(+), 17 deletions(-)
+
+"83b0123","ches0072","ches0072@flinders.edu.au","Wed, 27 Oct 2021 19:58:13 +1030","UI fixes",
+ 10 files changed, 2591 insertions(+), 2224 deletions(-)
+
+"02e3749","ktinaf","63826359+ktinaf@users.noreply.github.com","Tue, 26 Oct 2021 23:25:47 +1030","Changed buttons and did some work on the Menu Screens",
+ 7 files changed, 1087 insertions(+), 180 deletions(-)
+
+"d8ee4fb","jang5","liu1239@flinders.edu.au","Tue, 26 Oct 2021 14:17:51 +0800","More assets fixing",
+ 6 files changed, 251 insertions(+), 529 deletions(-)
+
+"fe7ec92","ches0072","ches0072@flinders.edu.au","Mon, 25 Oct 2021 16:56:36 +1030","UI Updates and Added Sound Effects to PhysioTherapy Puzzle",
+ 12 files changed, 1009 insertions(+), 181 deletions(-)
+
+"50d8572","Benjamin","DNAblue2112@gmail.com","Mon, 25 Oct 2021 15:43:26 +1030","Tested game manager",
+ 5 files changed, 65 insertions(+), 10 deletions(-)
+
+"85f774f","ches0072","ches0072@flinders.edu.au","Mon, 25 Oct 2021 15:29:06 +1030","GUI fix and Sound Test",
+ 19 files changed, 623 insertions(+), 171 deletions(-)
+
+"21457b9","Benjamin","DNAblue2112@gmail.com","Mon, 25 Oct 2021 13:24:53 +1030","Work on game manager and UI changes to OT puzzle",
+ 9 files changed, 262 insertions(+), 168 deletions(-)
+
+"c805682","jang5","liu1239@flinders.edu.au","Mon, 25 Oct 2021 10:30:12 +0800","DialogBox+Clock asset fixing",
+ 37 files changed, 17813 insertions(+), 332 deletions(-)
+
+"b5141c4","ches0072","ches0072@flinders.edu.au","Sun, 24 Oct 2021 21:43:14 +1030","OT Puzzle UI Start Menu Update",
+ 3 files changed, 445 insertions(+), 24 deletions(-)
+
+"c9f2e29","ches0072","ches0072@flinders.edu.au","Sun, 24 Oct 2021 15:46:36 +1030","UI StartScreen PhysioTherapy Update",
+ 12 files changed, 5529 insertions(+), 30 deletions(-)
+
+"8bb9391","Benjamin","DNAblue2112@gmail.com","Thu, 21 Oct 2021 12:31:22 +1030","Updated OT starting text",
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+"01dc073","Benjamin","DNAblue2112@gmail.com","Thu, 21 Oct 2021 12:24:34 +1030","File structure changes",
+ 275 files changed, 17 insertions(+), 1 deletion(-)
+
+"6f23919","ches0072","ches0072@flinders.edu.au","Wed, 20 Oct 2021 22:08:14 +1030","Minor UI updates to PhysioTherapy Puzzle",
+ 3 files changed, 435 insertions(+), 102 deletions(-)
+
+"ca1ab65","Benjamin","DNAblue2112@gmail.com","Wed, 20 Oct 2021 14:56:29 +1030","OT puzzle file organisation",
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+"581cbd0","jang5","liu1239@flinders.edu.au","Wed, 20 Oct 2021 11:59:45 +0800","RoomCommit",
+ 269 files changed, 20955 insertions(+)
+
+"16722e4","ches0072","ches0072@flinders.edu.au","Mon, 18 Oct 2021 16:18:24 +1030","Added Physiotherapy puzzle to project",
+ 47 files changed, 5337 insertions(+)
+
+"783266a","Benjamin","DNAblue2112@gmail.com","Thu, 14 Oct 2021 13:38:17 +1030","Cleaning up assets folder",
+ 482 files changed, 5 insertions(+), 27081 deletions(-)
+
+"f87ce98","Benjamin","DNAblue2112@gmail.com","Thu, 14 Oct 2021 13:27:18 +1030","OT puzzle sprites",
+ 12 files changed, 339 insertions(+), 243 deletions(-)
+
+"d8444df","Benjamin","DNAblue2112@gmail.com","Thu, 14 Oct 2021 01:06:35 +1030","OT Puzzle UIs",
+ 1 file changed, 11 insertions(+), 20 deletions(-)
+
+"a57690e","Benjamin","DNAblue2112@gmail.com","Wed, 13 Oct 2021 14:51:40 +1030","Full working prototype of OT Puzzle",
+ 8 files changed, 1174 insertions(+), 110 deletions(-)
+
+"47e979c","Benjamin","DNAblue2112@gmail.com","Tue, 12 Oct 2021 18:01:54 +1030","Added text feedback and changed animation speed on OT puzzle",
+ 16 files changed, 553 insertions(+), 12 deletions(-)
+
+"ed78746","Benjamin","DNAblue2112@gmail.com","Tue, 12 Oct 2021 15:31:00 +1030","Added the game portion of the OT puzzle",
+ 11 files changed, 978 insertions(+), 18 deletions(-)
+
+"5c2a7ba","Benjamin","DNAblue2112@gmail.com","Fri, 8 Oct 2021 16:33:33 +1030","Work on animations and code driving them for OT puzzle",
+ 4 files changed, 344 insertions(+), 109 deletions(-)
+
+"6f96a26","Benjamin","DNAblue2112@gmail.com","Thu, 7 Oct 2021 21:50:54 +1030","Added tongue and grabber to animations for OT puzzle",
+ 16 files changed, 1343 insertions(+), 301 deletions(-)
+
+"97c20e0","Benjamin","DNAblue2112@gmail.com","Thu, 7 Oct 2021 12:58:17 +1030","Animation control complete",
+ 13 files changed, 780 insertions(+), 619 deletions(-)
+
+"3ca4601","Benjamin","DNAblue2112@gmail.com","Thu, 30 Sep 2021 13:06:02 +0930","Added OT Puzzle bits",
+ 22 files changed, 2497 insertions(+)
+
+"c17f6bd","Benjamin","DNAblue2112@gmail.com","Thu, 16 Sep 2021 14:36:37 +0930","Moved some files around",
+ 13 files changed, 1 insertion(+), 1 deletion(-)
+
+"dea9a25","Benjamin","DNAblue2112@gmail.com","Thu, 16 Sep 2021 14:07:55 +0930","Made the UI scale properly and tested in web build",
+ 34 files changed, 946 insertions(+), 783 deletions(-)
+
+"a9a4dab","Benjamin","DNAblue2112@gmail.com","Thu, 16 Sep 2021 14:02:14 +0930","Remove a ton of unneeded files",
+ 8542 files changed, 459330 deletions(-)
+
+"93c33f1","Benjamin","8944036+Dart2112@users.noreply.github.com","Thu, 16 Sep 2021 13:53:09 +0930","Create .gitignore",
+ 1 file changed, 60 insertions(+)
+
+"9b01e5c","ches0072","ches0072@flinders.edu.au","Thu, 9 Sep 2021 15:11:26 +0930","Test Commit",
+ 8540 files changed, 458889 insertions(+), 48 deletions(-)
+
+"d5f5f5a","Benjamin","DNAblue2112@gmail.com","Thu, 9 Sep 2021 14:21:37 +0930","Removed git ignore",
+ 1 file changed, 31 deletions(-)
+
+"795029c","ches0072","ches0072@flinders.edu.au","Thu, 9 Sep 2021 12:20:20 +0930","Greeting Screen and main menu",
+ 13 files changed, 2394 insertions(+), 3326 deletions(-)
+
+"4223d20","ches0072","ches0072@flinders.edu.au","Wed, 1 Sep 2021 15:47:27 +0930","Fixed UI issue",
+ 7 files changed, 1780 insertions(+), 63 deletions(-)
+
+"d29c969","ches0072","ches0072@flinders.edu.au","Wed, 1 Sep 2021 14:51:27 +0930","Basic Settings Menu Setup",
+ 1677 files changed, 385678 insertions(+), 342 deletions(-)
+
+"c522a5d","Benjamin","DNAblue2112@gmail.com","Mon, 30 Aug 2021 16:31:42 +0930","Added base UI elements",
+ 6 files changed, 558 insertions(+), 55 deletions(-)
+
+"fc6e78c","Benjamin","DNAblue2112@gmail.com","Thu, 26 Aug 2021 09:44:59 +0930","Updated git ignore",
+ 19 files changed, 660 insertions(+), 121 deletions(-)
+
+"84243c6","Benjamin","DNAblue2112@gmail.com","Thu, 26 Aug 2021 09:36:15 +0930","Add unity files",
+ 22 files changed, 2043 insertions(+)
+
+"43c781b","Benjamin","8944036+Dart2112@users.noreply.github.com","Thu, 26 Aug 2021 09:19:01 +0930","Initial commit",
+ 2 files changed, 62 insertions(+)

@@ -49,6 +49,11 @@ namespace MainMenus.Scripts
             mainMenu.SetActive(true);
         }
 
+        public void PlayCredits()
+        {
+            GameManager.Scripts.GameManager.LoadNewScene("credits", "MainMenus");
+        }
+
         public void LoadFirstScene()
         {
             GameManager.Scripts.GameManager.LoadNewScene("Intro_Start", "MainMenus");
