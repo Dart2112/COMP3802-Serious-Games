@@ -19,6 +19,8 @@ namespace GameManager.Scripts
         //The scene that should be active (Might still be loading though)
         private string _activeScene = "";
 
+        private static List<string> _unloadList = new List<string>();
+
         //Items to be toggled
         private static readonly Dictionary<string, GameObject> ToggleItems = new Dictionary<string, GameObject>();
 
@@ -39,13 +41,17 @@ namespace GameManager.Scripts
         // Update is called once per frame
         void FixedUpdate()
         {
-            string unloadScene = PlayerPrefs.GetString("GameManager.UnloadScene");
+            bool unloadScene = _unloadList.Count > 0;
             //If we are unloading a scene then we add it to the list here
-            if (unloadScene != "")
+            if (unloadScene)
             {
-                SceneManager.UnloadSceneAsync(unloadScene);
-                Debug.Log("Unloading " + unloadScene);
-                PlayerPrefs.SetString("GameManager.UnloadScene", "");
+                foreach (string scene in _unloadList)
+                {
+                    SceneManager.UnloadSceneAsync(scene);
+                    Debug.Log("Unloading " + scene);
+                }
+
+                _unloadList.Clear();
             }
 
             //Fetch this value to check if a scene needs to be loaded
@@ -101,7 +107,8 @@ namespace GameManager.Scripts
         //Use this to unload a mini-game and revert back to another scene
         public static void UnloadScene(string sceneToUnload, string newActiveScene)
         {
-            PlayerPrefs.SetString("GameManager.UnloadScene", sceneToUnload);
+            if (sceneToUnload != "")
+                _unloadList.Add(sceneToUnload);
             PlayerPrefs.SetString("GameManager.ActiveScene", newActiveScene);
         }
 
@@ -110,7 +117,8 @@ namespace GameManager.Scripts
         {
             PlayerPrefs.SetString("GameManager.LoadScene", sceneToLoad);
             PlayerPrefs.SetString("GameManager.ActiveScene", sceneToLoad);
-            PlayerPrefs.SetString("GameManager.UnloadScene", unloadScene);
+            if (unloadScene != "")
+                _unloadList.Add(unloadScene);
         }
 
         //SCORE MANAGEMENT
@@ -119,8 +127,9 @@ namespace GameManager.Scripts
         {
             OccupationalTherapy,
             PhysioTherapy,
-            Optometry,
-            ExercisePhysio
+            Optometry
+
+            //Exercise removed since it doesnt have an end state
         }
 
         public static void SubmitScore(Puzzle puzzle, int score)

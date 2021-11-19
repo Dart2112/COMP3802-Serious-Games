@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/GameManager/_Scenes/GameManager.unity
     guid: 419318c89d4363b4bb55e8bae279b691
   - enabled: 1
-    path: Assets/MainMenus/Scenes/MainMenus.unity
+    path: Assets/MainMenus/_Scenes/MainMenus.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Puzzles/OccupationalTherapy/_Scenes/OT Puzzle.unity
@@ -72,7 +72,7 @@ EditorBuildSettings:
     path: Assets/HospitalRoom/_Scenes/Physio_End.unity
     guid: 5db14a85c144fdb439202e95a539736e
   - enabled: 1
-    path: Assets/MainMenus/Scenes/Splash Screen.unity
+    path: Assets/MainMenus/_Scenes/Splash Screen.unity
     guid: e650517e4858ba14b9406cd2588be7a8
   - enabled: 1
     path: Assets/Puzzles/ExercisePhysio/_Scenes/ExercisePhysio.unity
@@ -81,6 +81,9 @@ EditorBuildSettings:
     path: Assets/Puzzles/Optometry/Scene/OptometryPuzzle.unity
     guid: d3a49b195b839514ba29ceb169aba703
   - enabled: 1
-    path: Assets/MainMenus/Scenes/credits.unity
+    path: Assets/MainMenus/_Scenes/credits.unity
     guid: af65b5190ced0044abe5a9a241e924a8
+  - enabled: 1
+    path: Assets/MainMenus/_Scenes/pauseMenu.unity
+    guid: f3b9ea8f06a986c43977945d94728ea8
   m_configObjects: {}
