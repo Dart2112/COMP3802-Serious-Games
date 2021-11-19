@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonBehaviour : MonoBehaviour
 {
     private GameObject[] btnList; // Array of buttons on the screen
-    private string[] colourNamArr = {"Red", "Yellow", "Green", "Blue", "Magenta", "White"}; // Array of the all the colour choices
+    private string[] colourNamArr = { "Red", "Yellow", "Green", "Blue", "Magenta", "White" }; // Array of the all the colour choices
     private Text targetText; // Target colour UI Text component
     private Text uiCounter; // UI Counter
 
@@ -26,7 +26,15 @@ public class ButtonBehaviour : MonoBehaviour
     //private Font Munro;
 
     private CyclingBehaviourScript cyclingScrt;
-    
+    private int _goal = 10;
+    private int score = 0;
+
+    public GameObject startScreen; // Start screen
+    public GameObject endScreen; // End Screen
+
+    public float currentTime; // Current time in the scene;
+
+    private bool _finished = false; // Is the puzzle finished
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +55,8 @@ public class ButtonBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Updating time (stopwatch)
+        currentTime -= Time.deltaTime;
     }
 
     void SetTarget() {
@@ -70,42 +79,43 @@ public class ButtonBehaviour : MonoBehaviour
         SetTarget();
 
         Debug.Log("Before Shuffle clname:" + colourNamArr[0] + ", btn: " + btnList[0]);
-        
+
         ShuffleString(colourNamArr);
 
         Debug.Log("After Shuffle clname:" + colourNamArr[0] + ", btn: " + btnList[0]);
 
 
         for (int i = 0; i < btnList.Length; i++) {
-            
-            btnList[i].GetComponentInChildren<Text>().text = colourNamArr[i];
-            int x = Random.Range(0, btnList.Length);
 
-            if (colourNamArr[i].Equals(Red))
+            /*btnList[i].GetComponentInChildren<Text>().text = colourNamArr[i];
+            int x = Random.Range(0, btnList.Length);*/
+
+            if (colourNamArr[i].Equals("Red"))
             {
                 // Change this line when loading in new sprite instead
                 btnList[i].GetComponent<Image>().sprite = Red;
+                Debug.Log("assigning to red");
             }
-            else if (colourNamArr[i].Equals(Yellow)) {
+            else if (colourNamArr[i].Equals("Yellow")) {
                 btnList[i].GetComponent<Image>().sprite = Yellow;
             }
-            else if (colourNamArr[i].Equals(Green))
+            else if (colourNamArr[i].Equals("Green"))
             {
                 btnList[i].GetComponent<Image>().sprite = Green;
             }
-            else if (colourNamArr[i].Equals(Blue))
+            else if (colourNamArr[i].Equals("Blue"))
             {
                 btnList[i].GetComponent<Image>().sprite = Blue;
             }
-            else if (colourNamArr[i].Equals(Magenta))
+            else if (colourNamArr[i].Equals("Magenta"))
             {
                 btnList[i].GetComponent<Image>().sprite = Magenta;
             }
-            else if (colourNamArr[i].Equals(White))
+            else if (colourNamArr[i].Equals("White"))
             {
                 btnList[i].GetComponent<Image>().sprite = White;
             }
-        }    
+        }
     }
 
     // Knuth shuffle algorithm
@@ -115,7 +125,7 @@ public class ButtonBehaviour : MonoBehaviour
             int r = Random.Range(i, objects.Length);
             objects[i] = objects[r];
             objects[r] = tmp;
-        }    
+        }
     }
 
 
@@ -133,12 +143,39 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void OnClick(Button button) {
         Debug.Log("Button name is " + button.GetComponentInChildren<Text>().text);
-
-        if (button.GetComponentInChildren<Text>().text.Equals(target) && bikeIsClear) {
+        if (button.GetComponentInChildren<Text>().text.Equals(target) && bikeIsClear && !_finished)
+        {
             counter++;
             UpdateScreen();
             uiCounter.text = "" + counter;
+
+            if (counter == _goal) {
+                
+                // Get final time
+                endScreen.SetActive(true);
+
+                if (currentTime < 30f)
+                {
+                    score = 3;
+                }
+                else if (currentTime < 60f)
+                {
+                    score = 2;
+                }
+                else {
+                    score = 1;
+                }
+
+                _finished = true;
+                /*GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.PhysioTherapy,
+                 score);
+                GameManager.Scripts.GameManager.LoadNewScene("Physio_End", "PhysioTherapyPuzzle");*/
+            }
         }
+    }
+
+    public bool isFinished() {
+        return _finished;
     }
 
     public void SetBike(bool set) {
