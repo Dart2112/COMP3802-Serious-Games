@@ -162,7 +162,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11584027}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &11584030
 Camera:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 310725454}
   - component: {fileID: 310725453}
   m_Layer: 5
-  m_Name: SettingsBtn
+  m_Name: ExitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,9 +325,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuBehaviour, Assembly-CSharp
-        m_MethodName: OpenSettingsMenu
+      - m_Target: {fileID: 1819771276}
+        m_TargetAssemblyTypeName: MainMenus.Scripts.PausedBehaviour, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806168847}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12, y: -15.000015}
+  m_AnchoredPosition: {x: 12, y: -15}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1702851275
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 1772106165}
   - component: {fileID: 1772106164}
   m_Layer: 5
-  m_Name: SettingsTxt
+  m_Name: ExitTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: Exit
 --- !u!222 &1772106165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 1819771273}
   - component: {fileID: 1819771275}
   - component: {fileID: 1819771274}
+  - component: {fileID: 1819771276}
   m_Layer: 5
   m_Name: pause
   m_TagString: Untagged
@@ -1042,6 +1043,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819771272}
   m_CullTransparentMesh: 1
+--- !u!114 &1819771276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819771272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840fd51be31dfec4db1b57bc63c395be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1836396866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,9 +1138,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuBehaviour, Assembly-CSharp
-        m_MethodName: LoadFirstScene
+      - m_Target: {fileID: 1819771276}
+        m_TargetAssemblyTypeName: MainMenus.Scripts.PausedBehaviour, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1257,7 +1270,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1925290470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1819771276}
+        m_TargetAssemblyTypeName: MainMenus.Scripts.PausedBehaviour, Assembly-CSharp
+        m_MethodName: Credits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1925290470
 MonoBehaviour:
   m_ObjectHideFlags: 0
