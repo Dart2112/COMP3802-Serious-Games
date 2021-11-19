@@ -55,8 +55,8 @@ public class ButtonBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Updating time (stopwatch)
-        currentTime -= Time.deltaTime;
+        // Updating time (stopwatch) Currently is running even when start screen has been closed.
+        currentTime += Time.deltaTime;
     }
 
     void SetTarget() {
