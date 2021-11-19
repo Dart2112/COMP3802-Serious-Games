@@ -32,13 +32,8 @@ namespace Phone_and_Notebook.Scripts
                 optom.SetActive(true);
             }
 
-            if (GameManager.Scripts.GameManager.RetrieveScore(
-                    GameManager.Scripts.GameManager.Puzzle.ExercisePhysio) !=
-                -1)
-            {
-                //Show EP as not available
-                exercise.SetActive(true);
-            }
+            //Show EP as not available, not complete so no if statement
+            exercise.SetActive(true);
         }
 
         public void LoadPhysioPuzzle()
@@ -64,9 +59,8 @@ namespace Phone_and_Notebook.Scripts
 
         public void LoadExercisePhysioPuzzle()
         {
-            if (exercise.activeSelf)
-                return;
-            GameManager.Scripts.GameManager.LoadNewScene("EP_Start", "Intro_End");
+            //Puzzle not complete, dont launch
+            return;
         }
     }
 }
