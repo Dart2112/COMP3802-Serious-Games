@@ -12,6 +12,7 @@ namespace Puzzles.PhysioTherapy.Scripts
         private int _failCounter; // Count of failures    
         public int goal = 9; // Block count goal
         private int _max = 3; // Fail Limit
+        private bool _failed = false;
 
         [Tooltip("End Menu UI Screen")] public GameObject endMenu;
 
@@ -88,29 +89,34 @@ namespace Puzzles.PhysioTherapy.Scripts
 
         void Update()
         {
-            // Updating end and current times
-            currentTime -= Time.deltaTime;
-            endTime -= Time.deltaTime;
-
-            UpdateBlockCounter();
-
-            // If end goal has been reached and end wait time has been completed
-            if (_blockCounter >= goal && endTime < 0)
+            if (!_failed) // Stops block from falling if failed
             {
-                //Time.timeScale = 0;
+                // Updating end and current times
+                currentTime -= Time.deltaTime;
+                endTime -= Time.deltaTime;
 
-                direction = 0;
-                endCountDown.SetActive(false);
-                countDownCircle.SetActive(false);
-                endMenu.SetActive(true);
+                UpdateBlockCounter();
 
-                if (!_ended)
+                // If end goal has been reached and end wait time has been completed
+                if (_blockCounter >= goal && endTime < 0)
                 {
-                    _ended = true;
-                    _complete.Play();
-                    removeRigidBody();
+                    //Time.timeScale = 0;
+
+                    direction = 0;
+                    endCountDown.SetActive(false);
+                    countDownCircle.SetActive(false);
+                    endMenu.SetActive(true);
+
+                    if (!_ended)
+                    {
+                        _ended = true;
+                        _complete.Play();
+                        removeRigidBody();
+                    }
                 }
             }
+            else removeRigidBody();
+
         }
 
         void FixedUpdate()
@@ -159,6 +165,7 @@ namespace Puzzles.PhysioTherapy.Scripts
             if (_failCounter == _max)
             {
                 SetDirection(0);
+                _failed = true;
                 if (GameManager.Scripts.GameManager.GetPhysioCount() == 2)
                 {
                     //Has failed 3 times now, so we show the complete menu instead of fail

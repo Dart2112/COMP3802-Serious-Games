@@ -29,7 +29,7 @@ public class ButtonBehaviour : MonoBehaviour
     private int _goal = 10;
     private int score = 0;
 
-    public GameObject startScreen; // Start screen
+    //public GameObject startScreen; // Start screen
     public GameObject endScreen; // End Screen
 
     public float currentTime; // Current time in the scene;
@@ -175,9 +175,8 @@ public class ButtonBehaviour : MonoBehaviour
                 }
 
                 _finished = true;
-                /*GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.PhysioTherapy,
-                 score);
-                GameManager.Scripts.GameManager.LoadNewScene("Physio_End", "PhysioTherapyPuzzle");*/
+                // Pushing score
+                //GameManager.Scripts.GameManager.SubmitScore(GameManager.Scripts.GameManager.Puzzle.ExercisePhysio, this.score);
             }
         }
     }
