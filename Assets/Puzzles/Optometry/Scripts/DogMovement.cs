@@ -28,26 +28,26 @@ public class DogMovement : MonoBehaviour
 
         if(counter == 1)
         {
-            dog.position = new Vector2(570, 100);
-            image.position = new Vector2(570, 100);
+            dog.position = new Vector2(765, 140);
+            image.position = new Vector2(765, 140);
         }
 
         if (counter == 2)
         {
-            dog.position = new Vector2(160, 70);
-            image.position = new Vector2(160, 70);
+            dog.position = new Vector2(250, 120);
+            image.position = new Vector2(250, 120);
         }
 
         if (counter == 3)
         {
-            dog.position = new Vector2(490, 330);
-            image.position = new Vector2(490, 330);
+            dog.position = new Vector2(740, 550);
+            image.position = new Vector2(740, 550);
         }
 
         if (counter == 4)
         {
-            dog.position = new Vector2(1000, 320);
-            image.position = new Vector2(1000, 320);
+            dog.position = new Vector2(1500, 420);
+            image.position = new Vector2(1500, 420);
         }
 
         if (counter == 5)
