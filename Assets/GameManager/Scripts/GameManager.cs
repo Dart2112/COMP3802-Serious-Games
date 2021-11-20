@@ -127,9 +127,8 @@ namespace GameManager.Scripts
         {
             OccupationalTherapy,
             PhysioTherapy,
-            Optometry
-
-            //Exercise removed since it doesnt have an end state
+            Optometry,
+            ExercisePhysio
         }
 
         public static void SubmitScore(Puzzle puzzle, int score)

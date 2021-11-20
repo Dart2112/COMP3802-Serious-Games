@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class UIHandler : MonoBehaviour
+namespace Puzzles.ExercisePhysio
 {
-    // Start is called before the first frame update
-    public GameObject startMenu;
-    public GameObject endMenu;
-
-    // Update is called once per frame
-    void Update()
+    public class UIHandler : MonoBehaviour
     {
-        if (Input.GetKeyDown("space"))
+        // Start is called before the first frame update
+        public GameObject startMenu;
+        public GameObject endMenu;
+
+        // Update is called once per frame
+        void Update()
         {
-            if (startMenu.activeSelf)
+            if (Input.GetKeyDown("space"))
             {
-                startMenu.SetActive(false);
-            }
-            else if (endMenu.activeSelf)
-            {
-                GameManager.Scripts.GameManager.LoadNewScene("EP_End", "ExercisePhysio");
+                if (startMenu.activeSelf)
+                {
+                    startMenu.SetActive(false);
+                }
+                else if (endMenu.activeSelf)
+                {
+                    GameManager.Scripts.GameManager.LoadNewScene("EP_End", "ExercisePhysio");
+                }
             }
         }
     }

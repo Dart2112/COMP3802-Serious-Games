@@ -1751,13 +1751,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d12b26ebfb78c4db6b3ab785fef11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 21300000, guid: 4bf5f8ffef2e51f4984b8aa19f88f4f6, type: 3}
-  Yellow: {fileID: 21300000, guid: 649fba55b6549b549a1df6e88b1d7dda, type: 3}
-  Green: {fileID: 21300000, guid: 5522aa214e4487c4daea962fb88c4ba2, type: 3}
-  Blue: {fileID: 21300000, guid: 58e14233eba3ce34b81be575f95de301, type: 3}
-  Magenta: {fileID: 21300000, guid: 3e0176d79d4ef3343931eb0138f46081, type: 3}
-  White: {fileID: 21300000, guid: 7e93c936b6267434b8a20f06031157da, type: 3}
+  red: {fileID: 21300000, guid: 4bf5f8ffef2e51f4984b8aa19f88f4f6, type: 3}
+  yellow: {fileID: 21300000, guid: 649fba55b6549b549a1df6e88b1d7dda, type: 3}
+  green: {fileID: 21300000, guid: 5522aa214e4487c4daea962fb88c4ba2, type: 3}
+  blue: {fileID: 21300000, guid: 58e14233eba3ce34b81be575f95de301, type: 3}
+  magenta: {fileID: 21300000, guid: 3e0176d79d4ef3343931eb0138f46081, type: 3}
+  white: {fileID: 21300000, guid: 7e93c936b6267434b8a20f06031157da, type: 3}
   endScreen: {fileID: 2144487054}
+  endText: {fileID: 1445558651}
   currentTime: 0
   cTimeText: {fileID: 0}
 --- !u!1 &571227140
@@ -4538,10 +4539,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  down_arrow: {fileID: 0}
-  up_arrow: {fileID: 0}
-  left_arrow: {fileID: 0}
-  right_arrow: {fileID: 0}
+  downArrow: {fileID: 0}
+  upArrow: {fileID: 0}
+  leftArrow: {fileID: 0}
+  rightArrow: {fileID: 0}
   frame0: {fileID: 237953736}
   frame1: {fileID: 802014974}
   frame2: {fileID: 1458815964}

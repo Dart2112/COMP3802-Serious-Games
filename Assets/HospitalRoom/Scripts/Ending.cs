@@ -53,16 +53,16 @@ namespace HospitalRoom.Scripts
                     .OccupationalTherapy);
             int optomScore =
                 GameManager.Scripts.GameManager.RetrieveScore(GameManager.Scripts.GameManager.Puzzle.Optometry);
-            // int exerciseScore =
-            //     GameManager.Scripts.GameManager.RetrieveScore(GameManager.Scripts.GameManager.Puzzle
-            //         .ExercisePhysio);
+            int exerciseScore =
+                GameManager.Scripts.GameManager.RetrieveScore(GameManager.Scripts.GameManager.Puzzle
+                    .ExercisePhysio);
             float averageScore = GameManager.Scripts.GameManager.RetrieveAverageScore();
             scoreText.text =
                 "Congratulations on completing the game. Here is how you went.\n" +
                 "Physio Therapy: " + physioScore + "\n" +
                 "Occupational Therapy: " + otScore + "\n" +
                 "Optometry: " + optomScore + "\n" +
-                // "Exercise Physio: " + exerciseScore + "\n" +
+                 "Exercise Physio: " + exerciseScore + "\n" +
                 "For an average score of " + averageScore.ToString("F2") + " out of 3.00";
         }
 
