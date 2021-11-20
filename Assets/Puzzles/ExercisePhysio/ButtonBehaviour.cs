@@ -36,6 +36,8 @@ public class ButtonBehaviour : MonoBehaviour
 
     private bool _finished = false; // Is the puzzle finished
 
+    public Text cTimeText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class ButtonBehaviour : MonoBehaviour
 
         cyclingScrt = GameObject.Find("CyclingBehaviour").GetComponent<CyclingBehaviourScript>();
 
+        cTimeText = GameObject.Find("CurrentTime").GetComponent<Text>();
+
         // Updating Screen
         UpdateScreen();
     }
@@ -57,13 +61,17 @@ public class ButtonBehaviour : MonoBehaviour
     {
         // Updating time (stopwatch) Currently is running even when start screen has been closed.
         currentTime += Time.deltaTime;
+        if (!_finished) {
+            cTimeText.text = ("" + (int)currentTime);
+        }
+        
     }
 
     void SetTarget() {
         int x = Random.Range(0, btnList.Length);
         target = colourNamArr[x];
         Debug.Log("Target is " + target);
-        targetText.text = ("Choose the " + target + " button");
+        targetText.text = ("Click the button with " + target + " text");
 
     }
 
