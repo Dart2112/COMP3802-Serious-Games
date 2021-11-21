@@ -1,3 +1,75 @@
+"7b7b977","Benjamin","DNAblue2112@gmail.com","Sun, 21 Nov 2021 21:23:55 +1030","Fixed Credits scene",
+ 3 files changed, 5 insertions(+), 13 deletions(-)
+
+"d454ede","ches0072","ches0072@flinders.edu.au","Sun, 21 Nov 2021 21:08:43 +1030","Fixed End Screen Optom",
+ 3 files changed, 98 insertions(+), 147 deletions(-)
+
+"c6d38f8","ches0072","ches0072@flinders.edu.au","Sun, 21 Nov 2021 20:20:03 +1030","Minor font increase",
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+"bf482f6","ches0072","ches0072@flinders.edu.au","Sun, 21 Nov 2021 20:18:12 +1030","UI fixes and Exercise Physio Bug Fix",
+ 10 files changed, 1476 insertions(+), 391 deletions(-)
+
+"7393dfb","ches0072","ches0072@flinders.edu.au","Sun, 21 Nov 2021 18:36:44 +1030","Intro_Start UI buttons were made visible",
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+"4ae9d4d","ches0072","ches0072@flinders.edu.au","Sun, 21 Nov 2021 18:33:44 +1030","Fixed red phone being in front.",
+ 3 files changed, 23 insertions(+), 22 deletions(-)
+
+"da331dd","Dart2112","DNAblue2112@gmail.com","Sun, 21 Nov 2021 14:53:27 +1030","Credits and ending complete",
+ 11 files changed, 720 insertions(+), 200 deletions(-)
+
+"586a11b","Dart2112","DNAblue2112@gmail.com","Sun, 21 Nov 2021 13:32:32 +1030","Optom puzzle scoring",
+ 4 files changed, 94 insertions(+), 133 deletions(-)
+
+"4ff325a","Benjamin","dart2112@lapismc.net","Sat, 20 Nov 2021 22:47:23 +1030","EP puzzle linking",
+ 8 files changed, 377 insertions(+), 354 deletions(-)
+
+"335fd4f","jang5","liu1239@flinders.edu.au","Sat, 20 Nov 2021 15:11:42 +0800","Dog movement bug fixed",
+ 2 files changed, 18 insertions(+), 18 deletions(-)
+
+"9570b06","jang5","liu1239@flinders.edu.au","Sat, 20 Nov 2021 14:54:28 +0800","UI size bug fixed",
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+"025b526","ches0072","ches0072@flinders.edu.au","Sat, 20 Nov 2021 16:22:43 +1030","UI consistency changes.",
+ 8 files changed, 1438 insertions(+), 769 deletions(-)
+
+"f3f4425","ches0072","ches0072@flinders.edu.au","Sat, 20 Nov 2021 14:46:31 +1030","Exercise Physio Updated, added timer, made it look nicer.",
+ 4 files changed, 1854 insertions(+), 110 deletions(-)
+
+"b9d88cf","ches0072","ches0072@flinders.edu.au","Fri, 19 Nov 2021 21:56:26 +1030","Revert "notebook fixed"",
+ 1 file changed, 32 deletions(-)
+
+"c3daed3","ktinaf","foto0006@flinders.edu.au","Fri, 19 Nov 2021 21:21:10 +1030","notebook fixed",
+ 1 file changed, 32 insertions(+)
+
+"192236a","ches0072","ches0072@flinders.edu.au","Fri, 19 Nov 2021 21:03:22 +1030","Fixed UI Notebook",
+ 1 file changed, 58 insertions(+), 58 deletions(-)
+
+"9250e2a","ches0072","ches0072@flinders.edu.au","Fri, 19 Nov 2021 20:53:32 +1030","Had timer going in wrong direction",
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+"0831ed3","ches0072","ches0072@flinders.edu.au","Fri, 19 Nov 2021 20:49:24 +1030","Exercise Physio fixes. Added animation and end condition.",
+ 13 files changed, 2736 insertions(+), 835 deletions(-)
+
+"f26ee1e","ktinaf","foto0006@flinders.edu.au","Fri, 19 Nov 2021 20:11:29 +1030","trying to work out the links in the notebook??",
+ 1 file changed, 32 insertions(+), 1112 deletions(-)
+
+"abc50e8","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 17:50:15 +1030","Pause menu implemented",
+ 31 files changed, 891 insertions(+), 35 deletions(-)
+
+"c3b2210","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 16:50:18 +1030","Fixed to not allow the exercise puzzle to run",
+ 3 files changed, 11 insertions(+), 16 deletions(-)
+
+"7d1d51e","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 12:44:34 +1030","Updated web build",
+ 10 files changed, 9 insertions(+), 8 deletions(-)
+
+"09a1e01","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 12:19:15 +1030","Implemented credits and fixed splash",
+ 8 files changed, 368 insertions(+), 19 deletions(-)
+
+"466cedf","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Fri, 19 Nov 2021 02:32:33 +1030","New Optom added",
+ 58 files changed, 2376 insertions(+), 56 deletions(-)
+
 "ac4d3dc","Benjamin","DNAblue2112@gmail.com","Fri, 19 Nov 2021 01:46:22 +1030","Update web build",
  5 files changed, 11 insertions(+), 76 deletions(-)
 
@@ -15,6 +87,9 @@
 
 "9955b5c","Benjamin","DNAblue2112@gmail.com","Thu, 18 Nov 2021 16:32:39 +1030","Added game end state and tested it",
  11 files changed, 763 insertions(+), 31 deletions(-)
+
+"4d8bb33","ENGR2881-hyde0070","80891213+ENGR2881-hyde0070@users.noreply.github.com","Thu, 18 Nov 2021 16:29:36 +1030","New Animations/Backgrounds",
+ 89 files changed, 5684 insertions(+), 1184 deletions(-)
 
 "d443e49","Benjamin","DNAblue2112@gmail.com","Thu, 18 Nov 2021 14:39:12 +1030","Added red icons that show who you can call",
  7 files changed, 953 insertions(+), 44 deletions(-)
