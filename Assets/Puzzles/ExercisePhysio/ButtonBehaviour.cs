@@ -40,6 +40,7 @@ namespace Puzzles.ExercisePhysio
         public float currentTime; // Current time in the scene;
 
         private bool _finished; // Is the puzzle finished
+        private bool _started; // has the puzzle started;
 
         public Text cTimeText;
 
@@ -65,11 +66,18 @@ namespace Puzzles.ExercisePhysio
         void Update()
         {
             // Updating time (stopwatch) Currently is running even when start screen has been closed.
-            currentTime += Time.deltaTime;
+            if (_started) {
+                currentTime += Time.deltaTime;
+            }
+            
             if (!_finished)
             {
                 cTimeText.text = ("" + (int) currentTime);
             }
+        }
+
+        public void TimeStart() {
+            _started = true;
         }
 
         void SetTarget()
@@ -169,7 +177,7 @@ namespace Puzzles.ExercisePhysio
                 {
                     // Get final time
                     endScreen.SetActive(true);
-                    endText.text = "Well Done You Took " + currentTime + " seconds. Press [Space] to continue.";
+                    endText.text = "Well Done You Took " + (int)currentTime + " seconds. Press [Space] to continue.";
 
                     if (currentTime < 30f)
                     {

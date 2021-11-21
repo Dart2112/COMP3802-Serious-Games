@@ -806,8 +806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198.43, y: -114.83}
-  m_SizeDelta: {x: 373.44, y: 30.08}
+  m_AnchoredPosition: {x: 197.22516, y: -159}
+  m_SizeDelta: {x: 371.0303, y: 88.9299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863030464721870
 CanvasRenderer:
@@ -1433,7 +1433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178.44, y: -214.6}
+  m_AnchoredPosition: {x: 185.1, y: -236}
   m_SizeDelta: {x: 333.46, y: 25.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863030772965716
@@ -2658,8 +2658,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
-  m_SizeDelta: {x: 373.44, y: 30}
+  m_AnchoredPosition: {x: 5, y: 10.0401}
+  m_SizeDelta: {x: 373.44, y: 50.0802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863031413798158
 CanvasRenderer:
@@ -2696,10 +2696,10 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'www.flinders.edu.au/occupational-therapy  '
@@ -3876,8 +3876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 333.46, y: 30}
+  m_AnchoredPosition: {x: 26.4588, y: 0}
+  m_SizeDelta: {x: 386.3777, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863031799541636
 CanvasRenderer:
@@ -3914,7 +3914,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4187,8 +4187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211.42, y: -76.81}
-  m_SizeDelta: {x: 389.36, y: 407.48}
+  m_AnchoredPosition: {x: 211.42, y: -69.632935}
+  m_SizeDelta: {x: 389.36, y: 422.7458}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863031959631282
 CanvasRenderer:
@@ -4883,7 +4883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286.7, y: 196.18999}
+  m_AnchoredPosition: {x: 286.7, y: 204}
   m_SizeDelta: {x: 238.81, y: 115.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863032119197010
@@ -5774,7 +5774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 104.39, y: 204.81}
+  m_AnchoredPosition: {x: 104.39, y: 203.8}
   m_SizeDelta: {x: 175.33, y: 170.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8260863032336046872
