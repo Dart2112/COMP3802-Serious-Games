@@ -11,6 +11,7 @@ namespace Puzzles.Optometry.Scripts
         public Transform image;
         public GameObject endPage;
         public Text endText;
+        public Text otherText;
         public StartScript startScript;
         private int _counter;
 
@@ -18,6 +19,8 @@ namespace Puzzles.Optometry.Scripts
         {
             dog = GameObject.Find("DogButton").transform;
             image = GameObject.Find("image").transform;
+            startScript = GameObject.Find("StartScript").GetComponent<StartScript>();
+            //endText = GameObject.Find("EndText").GetComponent<Text>();
         }
 
         // Update is called once per frame
@@ -56,7 +59,8 @@ namespace Puzzles.Optometry.Scripts
             if (_counter == 5)
             {
                 endPage.SetActive(true);
-                endText.text = "You did it in " + startScript.gameTime.ToString("F2") + " seconds!\nWell done!\n" +
+                endText = GameObject.Find("EndText").GetComponent<Text>();
+                endText.text = "You did it in " + (int)startScript.gameTime + " seconds!\nWell done!\n" +
                                "Press [SPACE] to return";
             }
         }
