@@ -62,7 +62,7 @@ namespace HospitalRoom.Scripts
                 "Physio Therapy: " + physioScore + "\n" +
                 "Occupational Therapy: " + otScore + "\n" +
                 "Optometry: " + optomScore + "\n" +
-                 "Exercise Physio: " + exerciseScore + "\n" +
+                "Exercise Physio: " + exerciseScore + "\n" +
                 "For an average score of " + averageScore.ToString("F2") + " out of 3.00";
         }
 
