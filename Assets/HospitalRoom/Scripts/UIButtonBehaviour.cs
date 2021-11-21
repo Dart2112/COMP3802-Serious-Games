@@ -46,6 +46,7 @@ public class UIButtonBehaviour : MonoBehaviour
 
     public void AllowOpen()
     {
+        Debug.Log("AllowOpen is trye");
         _allowOpen = true;
     }
 }
