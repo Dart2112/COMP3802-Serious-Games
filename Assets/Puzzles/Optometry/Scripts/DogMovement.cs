@@ -1,60 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
-public class DogMovement : MonoBehaviour
+namespace Puzzles.Optometry.Scripts
 {
-    // Start is called before the first frame update
-    public Transform dog;
-    public Transform image;
-    public GameObject endPage;
-    private int counter = 0;
-
-    void Start()
+    public class DogMovement : MonoBehaviour
     {
-        dog = GameObject.Find("DogButton").transform;
-        image = GameObject.Find("image").transform;
-    }
+        // Start is called before the first frame update
+        public Transform dog;
+        public Transform image;
+        public GameObject endPage;
+        public Text endText;
+        public StartScript startScript;
+        private int _counter;
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
-    public void Click()
-    {
-        counter++;
-
-        if(counter == 1)
+        void Start()
         {
-            dog.position = new Vector2(765, 140);
-            image.position = new Vector2(765, 140);
+            dog = GameObject.Find("DogButton").transform;
+            image = GameObject.Find("image").transform;
         }
 
-        if (counter == 2)
+        // Update is called once per frame
+        void Update()
         {
-            dog.position = new Vector2(250, 120);
-            image.position = new Vector2(250, 120);
         }
 
-        if (counter == 3)
+        public void Click()
         {
-            dog.position = new Vector2(740, 550);
-            image.position = new Vector2(740, 550);
+            _counter++;
+
+            if (_counter == 1)
+            {
+                dog.position = new Vector2(765, 140);
+                image.position = new Vector2(765, 140);
+            }
+
+            if (_counter == 2)
+            {
+                dog.position = new Vector2(250, 120);
+                image.position = new Vector2(250, 120);
+            }
+
+            if (_counter == 3)
+            {
+                dog.position = new Vector2(740, 550);
+                image.position = new Vector2(740, 550);
+            }
+
+            if (_counter == 4)
+            {
+                dog.position = new Vector2(1500, 420);
+                image.position = new Vector2(1500, 420);
+            }
+
+            if (_counter == 5)
+            {
+                endPage.SetActive(true);
+                endText.text = "You did it in " + startScript.gameTime.ToString("F2") + " seconds!\nWell done!\n" +
+                               "Press [SPACE] to return";
+            }
         }
-
-        if (counter == 4)
-        {
-            dog.position = new Vector2(1500, 420);
-            image.position = new Vector2(1500, 420);
-        }
-
-        if (counter == 5)
-        {
-            endPage.SetActive(true);
-        }
-
-
     }
 }
