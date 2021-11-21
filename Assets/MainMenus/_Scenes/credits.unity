@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  timeToEnd: 76
+  timeToEnd: 77
   timeElapsed: 0
 --- !u!1 &1595688695
 GameObject:
